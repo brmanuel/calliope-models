@@ -12,3 +12,11 @@ The original models can be found here.
 - Europe: https://github.com/calliope-project/euro-calliope
 
 The Calliope fork benchmarked with these models can be found [here](https://github.com/brmanuel/calliope).
+
+To run a model, you need to install the Calliope pip package from the above fork and then run 
+
+```
+python calliope run path/to/model.yaml --scenario=overrides
+```
+
+Where <overrides> is a comma-separated list of model-specific overrides specified in the respective overrides.yaml file of each model.
