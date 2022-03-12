@@ -19,9 +19,12 @@ To run a model, you need to install the Calliope pip package from the above fork
 python calliope run path/to/model.yaml --scenario=overrides
 ```
 
-Where overrides is a comma-separated list of model-specific overrides specified in the respective overrides.yaml file of each model.
+Where <overrides> is a comma-separated list of keywords.
 
 ## Overrides
+
+Most overrides are model-specific and are specified in the respective overrides.yaml file of each model.
+Specific model variations that were benchmarked are:
 
 ### Europe Model
 
