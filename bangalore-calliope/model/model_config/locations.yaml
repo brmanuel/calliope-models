@@ -1,0 +1,56 @@
+locations:
+
+    A,B,C,D,E,F,G,H,I,J,K: # buildings, see below for renaming of merged nodes
+        techs:
+            demand_electricity:
+            demand_cooling:
+            pv:
+            AC:
+            supply_elec:
+            transformer:
+            exchanger:
+            diesel_gen:
+            battery:
+
+    EC1: # Energy Centres
+        techs:
+            CCHP_supply:
+            CCHP_biomass:
+            CCHP_diesel:
+            EC:
+            cold_store:
+            supply_elec:
+                costs.monetary.om_prod: 8.25 # Rs 'high tension': https://www.karnataka.gov.in/kerc/Court%20Orders/Tariff%202017/ENGLISH-Press%20Note.pdf
+            battery_EC:
+    N1: # transmission link
+
+    A.coordinates: {lat: 12.9850618, lon: 77.7285653}
+    B.coordinates: {lat: 12.9855702, lon: 77.7276887}
+    C.coordinates: {lat: 12.9841191, lon: 77.7282475}
+    D.coordinates: {lat: 12.9846078, lon: 77.7273196}
+    E.coordinates: {lat: 12.9827486, lon: 77.7273477}
+    F.coordinates: {lat: 12.9811963, lon: 77.7265741}
+    G.coordinates: {lat: 12.9801903, lon: 77.7255723}
+    H.coordinates: {lat: 12.9802957, lon: 77.7240901}
+    K.coordinates: {lat: 12.9817025, lon: 77.7229595}
+    I.coordinates: {lat: 12.979141, lon: 77.722626}
+    J.coordinates: {lat: 12.9819301, lon: 77.724525}
+    N1.coordinates: {lat: 12.9821441, lon: 77.7255786}
+    EC1.coordinates: {lat: 12.9831582, lon: 77.7252567}
+    EC2.coordinates: {lat: 12.9853432, lon: 77.7292371}
+    EC3.coordinates: {lat: 12.9801263, lon: 77.7215981}
+    EC4.coordinates: {lat: 12.9801786, lon: 77.7264047}
+
+    A.available_area: 2720
+    B.available_area: 6097.6
+    C.available_area: 3162.4
+    D.available_area: 5600
+    E.available_area: 8592
+    F.available_area: 11155.2
+    G.available_area: 11645.6
+    H.available_area: 18612.8
+    K.available_area: 7900.8
+    I.available_area: 5961.6
+    J.available_area: 22312
+
+

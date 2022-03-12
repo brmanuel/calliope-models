@@ -1,0 +1,104 @@
+import:
+    - '../renewable-techs.yaml'
+    - '../storage-techs.yaml'
+    - '../legacy-tech.yaml'
+    - './locations.yaml'
+    - './hydro-capacities.yaml'
+    - './links.yaml'
+    - './renewable-shares.yaml'
+    - './co2-caps.yaml'
+    - '../../seeds.yaml'
+    - './subsettimes.yaml'
+    - './overrides.yaml'
+    - '../../solvers.yaml'
+
+        
+scenarios:
+    baseline: ["diw_assumptions", "ose_capacity", "diw_battery_baseline_cost", "jrc_etri_2014_renewable_costs", "equal_interest_rate", "no_hydrogen", "subsettime_5", "oldrun"]
+
+    simple: ["no_csv", "no_co2_caps", "no_renewable_shares", "diw_assumptions", "ose_capacity", "diw_battery_baseline_cost", "jrc_etri_2014_renewable_costs", "equal_interest_rate", "subsettime_5", "oldrun"]
+
+    low-cost: ["diw_assumptions", "ose_capacity", "diw_battery_low_cost", "jrc_etri_2014_renewable_costs", "equal_interest_rate", "no_hydrogen"]
+    lowest-cost: ["diw_assumptions", "ose_capacity", "diw_battery_lowest_cost", "jrc_etri_2014_renewable_costs", "equal_interest_rate", "no_hydrogen"]
+    baseline-germany: ["diw_assumptions", "ose_capacity", "diw_battery_baseline_cost", "jrc_etri_2014_renewable_costs", "germany_only", "equal_interest_rate", "no_hydrogen"]
+    low-cost-germany: ["diw_assumptions", "ose_capacity", "diw_battery_low_cost", "jrc_etri_2014_renewable_costs", "germany_only", "equal_interest_rate", "no_hydrogen"]
+    lowest-cost-germany: ["diw_assumptions", "ose_capacity", "diw_battery_lowest_cost", "jrc_etri_2014_renewable_costs", "germany_only", "equal_interest_rate", "no_hydrogen"]
+    tight-co2-caps-germany: ["diw_assumptions", "ose_capacity", "diw_battery_baseline_cost", "jrc_etri_2014_renewable_costs", "germany_only", "equal_interest_rate", "no_hydrogen", "tight_co2_caps"]
+
+model:
+    name: 'Open Source Modelling -- Euro Calliope model'
+    calliope_version: 0.6.4
+    timeseries_data_path: './'
+    subset_time: ['2015-01-01', '2015-01-10']
+
+run:
+    mode: plan
+    objective_options: {
+        'cost_class': {'monetary': 1},
+        'sense': 'minimize'
+    }
+    
+techs:
+    demand_elec:
+        essentials:
+            name: 'Electricity demand'
+            parent: demand
+            carrier: electricity
+        constraints:
+            resource: file=electricity-demand.csv
+    uni_directional_ac_transmission_A:
+        # A and B are necessary to model uni directional constraints in both directions
+        # https://github.com/calliope-project/calliope/issues/215
+        essentials:
+            name: "High voltage AC transmission line A"
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_eff_per_distance: 0.99999995 # [1/m]
+            one_way: true
+    uni_directional_ac_transmission_B:
+        # A and B are necessary to model uni directional constraints in both directions
+        # https://github.com/calliope-project/calliope/issues/215
+        essentials:
+            name: "High voltage AC transmission line B"
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_eff_per_distance: 0.99999995 # [1/m]
+            one_way: true
+    biomass: # based on Anaerobic digestion from [JRC ETRI 2014]
+        essentials:
+            name: Biomass
+            carrier: electricity
+            parent: supply
+        constraints:
+            energy_eff: 0.4
+            resource: inf
+            lifetime: 20
+        costs:
+            monetary:
+                energy_cap: 2760000.0  # [1.0 2013 EUR/MW]
+                om_prod: 3.1  # [1.0 2013 EUR/MWh]
+                om_annual: 113160.0  # [1.0 2013 EUR/MW/yr] 2760000 * 4.1%
+                om_con: 16.2 # [1.0 EUR/MWh] medium price taken from [@EuropeanEnvironmentAgency:2013]
+            co2:
+                om_prod: 0
+# removed costs for network test
+    hvac: # MB: = UK hvac
+        essentials:
+            name: AC transmission (existing)
+            carrier: electricity
+            parent: transmission
+        costs:
+            monetary:
+                om_prod: 0.002
+                interest_rate: 0.1
+            co2:
+                om_prod: 0.011
+                interest_rate: 0
+            domestic: 
+                interest_rate: 0
+        constraints:
+            energy_eff_per_distance: 0.99999995 # MB: taken from Euro. For Euro-distances d, 0.995^d = 0
+            energy_eff: 1.0 # maybe we should comment this out
+            lifetime: 25

@@ -1,0 +1,49 @@
+techs:
+    battery:
+        essentials:
+            name: 'Battery storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.95  # 0.95 * 0.95 = 0.9025 round trip efficiency
+            storage_loss: 0  # No loss over time assumed
+            lifetime: 20
+        costs:
+            monetary: # FIXME outdated
+                storage_cap: 322730 # [1.0 EUR/MWh], from 318 2008 USD in {budischak2013}
+                energy_cap: 713470  # [1.0 EUR/MW], from 703 2008 USD in {budischak2013}
+                om_annual: 12480 # [1.0 EUR/MW/year], from 12.3 2008 USD in {budischak2013}
+                om_prod: 2.8 # [1.0 EUR/MWh], assumption
+    pumped_hydro:
+        essentials:
+            name: 'Pumped hydro power storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.922 # 0.85 round-trip [JRC ETRI 2014]
+            lifetime: 60 # [JRC ETRI 2014]
+        costs:
+            monetary:
+                energy_cap: 1500000 # [1.0 EUR2013/MW] [JRC ETRI 2014]
+                om_annual: 225000 # [1.0 EUR2013/MW/year] [JRC ETRI 2014]
+    hydrogen:
+        essentials:
+            name: Hydrogen power storage
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.66  # 0.438 round-trip, {budischak2013}
+            storage_loss: 1.50e-08
+            lifetime: 20
+        costs:
+            monetary: # FIXME outdated
+                storage_cap: 28520  # [1.0 EUR/MWh], from 28.1 2008 USD in {budischak2013}
+                energy_cap: 1708060  # [1.0 EUR/MW], from 1683 2008 USD in {budischak2013}
+                om_annual: 27910 # [1.0 EUR/MW/year], from 27.5 2008 USD in {budischak2013}
+                om_prod: 2.8 # [1.0 EUR/MWh], assumption

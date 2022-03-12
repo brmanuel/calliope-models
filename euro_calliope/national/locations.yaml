@@ -1,0 +1,716 @@
+locations:
+    
+    AUT:
+        coordinates: {lat: 47.58707180296524, lon: 14.14026780060958}
+        available_area: 9987.509705670178 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 142335.4939659834 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 79831.36859181924 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    BEL:
+        coordinates: {lat: 50.64103513383204, lon: 4.661121087007833}
+        available_area: 5074.491256605834 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 37814.334597975016 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 92871.85326697366 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 52153.09107910842 # [1.0 MW]
+    
+    BGR:
+        coordinates: {lat: 42.75741429233487, lon: 25.235337209955468}
+        available_area: 42601.35424843431 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 253658.31719487903 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 76308.34079862578 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 80786.10804028809 # [1.0 MW]
+    
+    HRV:
+        coordinates: {lat: 45.03735942804355, lon: 16.4010577785143}
+        available_area: 16010.412998721004 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 129981.85949808359 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 64726.24873238001 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 274677.0422066376 # [1.0 MW]
+    
+    CYP:
+        coordinates: {lat: 35.05014212044721, lon: 33.22580863733581}
+        available_area: 1940.4790101721885 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 9506.435990214348 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 19939.75205873639 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 19766.913955695924 # [1.0 MW]
+    
+    CZE:
+        coordinates: {lat: 49.73910742450152, lon: 15.331358130594577}
+        available_area: 26317.07464129105 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 203203.95272248983 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 95677.7183417936 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    DNK:
+        coordinates: {lat: 55.95914248834342, lon: 10.054263891298833}
+        available_area: 15027.190629962832 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 41496.63192436099 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 67076.67095263982 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 1250523.5458154974 # [1.0 MW]
+    
+    EST:
+        coordinates: {lat: 58.671073849214444, lon: 25.545273912118212}
+        available_area: 11907.289789874108 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 179670.16119030118 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 14753.895867158897 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 321125.748881679 # [1.0 MW]
+    
+    FIN:
+        coordinates: {lat: 64.47525626475895, lon: 26.225956712090763}
+        available_area: 64202.978074748076 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 1714249.4364227057 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 54276.43966341346 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 710368.3464768715 # [1.0 MW]
+    
+    FRA:
+        coordinates: {lat: 46.55862297463782, lon: 2.5541469573971063}
+        available_area: 189944.12668962032 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 734271.4829637706 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 746061.4894042469 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 817595.3624460475 # [1.0 MW]
+    
+    DEU:
+        coordinates: {lat: 51.10946743175245, lon: 10.390558629333484}
+        available_area: 102791.98279818892 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 683674.7590187192 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 746426.6641756669 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 840052.0726407319 # [1.0 MW]
+    
+    GRC:
+        coordinates: {lat: 39.04047244846873, lon: 22.98206982724598}
+        available_area: 26721.547710619867 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 313585.79938292503 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 76456.12347202263 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 360539.9476433918 # [1.0 MW]
+    
+    HUN:
+        coordinates: {lat: 47.165232464789604, lon: 19.412229235094905}
+        available_area: 57533.917629420765 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 87938.82435750961 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 97974.62614057938 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    IRL:
+        coordinates: {lat: 53.178268356638185, lon: -8.149542093388002}
+        available_area: 28673.47541740909 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 110702.4843558371 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 35873.91472144551 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 301263.0656686239 # [1.0 MW]
+    
+    ITA:
+        coordinates: {lat: 42.78740968498542, lon: 12.075412597897996}
+        available_area: 56642.517554290585 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 498811.65348225826 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 410106.84578457795 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 601432.3622570559 # [1.0 MW]
+    
+    LVA:
+        coordinates: {lat: 56.85390378126021, lon: 24.927230381724947}
+        available_area: 18305.70050771907 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 251287.51265263557 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 18030.637939035485 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 229401.39582663774 # [1.0 MW]
+    
+    LTU:
+        coordinates: {lat: 55.33681391025556, lon: 23.90038305176159}
+        available_area: 23451.003429338336 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 168291.48091313243 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 34630.35270329508 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 51274.10868739709 # [1.0 MW]
+    
+    LUX:
+        coordinates: {lat: 49.77707638220823, lon: 6.092674029378782}
+        available_area: 675.0647239461541 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 6468.971563577653 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 4854.289355029987 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    NLD:
+        coordinates: {lat: 52.267617624778474, lon: 5.587283132246907}
+        available_area: 7092.687114935367 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 25087.307372093197 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 154851.52409612248 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 956144.7941005045 # [1.0 MW]
+    
+    POL:
+        coordinates: {lat: 52.12444845204572, lon: 19.40073791982721}
+        available_area: 121137.17526217551 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 731920.0017416773 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 258339.9292470248 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 234222.30913493785 # [1.0 MW]
+    
+    PRT:
+        coordinates: {lat: 39.68476326475042, lon: -7.963926120315041}
+        available_area: 28539.92387527972 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 141867.50594198704 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 118225.88358366633 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 104508.00869766623 # [1.0 MW]
+    
+    ROU:
+        coordinates: {lat: 45.83917733004868, lon: 24.984435486446877}
+        available_area: 104073.5419030115 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 464951.83797502524 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 179407.45928954586 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 133748.79981592298 # [1.0 MW]
+    
+    SVK:
+        coordinates: {lat: 48.70752489815144, lon: 19.484824194922503}
+        available_area: 14347.34914111346 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 135550.1530163288 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 53772.25590598622 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    SVN:
+        coordinates: {lat: 46.11947935903966, lon: 14.821412346367428}
+        available_area: 1306.8813824132085 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 51619.95215040445 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 22055.0553540032 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 3076.0480092465878 # [1.0 MW]
+    
+    ESP:
+        coordinates: {lat: 40.381893182667355, lon: -3.4904627649558533}
+        available_area: 223670.2421623543 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 1031766.6468904021 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 248930.10768157733 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 372957.9741457477 # [1.0 MW]
+    
+    SWE:
+        coordinates: {lat: 62.77547255376661, lon: 16.757196491020135}
+        available_area: 90223.24534700437 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 2356268.458516419 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 75875.18927333027 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 1059103.9719055963 # [1.0 MW]
+    
+    GBR:
+        coordinates: {lat: 54.155962486738325, lon: -2.896457306415826}
+        available_area: 78058.82257017492 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 542022.2248992622 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 367747.030276268 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 2388978.434220347 # [1.0 MW]
+    
+    ALB:
+        coordinates: {lat: 41.14060102736738, lon: 20.062842187044662}
+        available_area: 3511.4886793494225 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 72318.83955311777 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 13766.37354869512 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 29490.61752285808 # [1.0 MW]
+    
+    BIH:
+        coordinates: {lat: 44.17563914929959, lon: 17.788758957041463}
+        available_area: 7125.125204622746 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 153241.08833056688 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 37381.17522370233 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 157.48215068131685 # [1.0 MW]
+    
+    MKD:
+        coordinates: {lat: 41.592963491809805, lon: 21.691975968898497}
+        available_area: 5434.803173966706 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 74879.09866768122 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 10831.237898113337 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    MNE:
+        coordinates: {lat: 42.77737640857858, lon: 19.237101393788453}
+        available_area: 1319.8486836627126 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 39659.259765625 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 6948.979822144503 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 5321.479949578642 # [1.0 MW]
+    
+    NOR:
+        coordinates: {lat: 64.45637488035466, lon: 14.079858839592465}
+        available_area: 105820.19143333288 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 1104526.7511637062 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 28532.725082404813 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 820283.2823416683 # [1.0 MW]
+    
+    SRB:
+        coordinates: {lat: 44.226095041112366, lon: 20.782009323606133}
+        available_area: 26034.888277426362 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 147109.60512948036 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 79489.91319870147 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    
+    CHE:
+        coordinates: {lat: 46.80022695158861, lon: 8.22947746994613}
+        available_area: 1483.8868635818362 # [1.0 km2] usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            pumped_hydro:
+            hydro_run_of_river:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 42759.19580817222 # [1.0 MW]
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 59717.949108504166 # [1.0 MW]
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 0.0 # [1.0 MW]
+    

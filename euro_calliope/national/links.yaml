@@ -1,0 +1,687 @@
+
+links:
+    
+    ALB,GRC.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 250.0 # [1.0 MW]
+    GRC,ALB.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 250.0 # [1.0 MW]
+    
+    ALB,MKD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    MKD,ALB.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    
+    ALB,MNE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 400.0 # [1.0 MW]
+    MNE,ALB.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 400.0 # [1.0 MW]
+    
+    ALB,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    SRB,ALB.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    
+    AUT,CHE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1700.0 # [1.0 MW]
+    CHE,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1700.0 # [1.0 MW]
+    
+    AUT,CZE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    CZE,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    AUT,DEU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 7500.0 # [1.0 MW]
+    DEU,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 7500.0 # [1.0 MW]
+    
+    AUT,HUN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    HUN,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 800.0 # [1.0 MW]
+    
+    AUT,ITA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1050.0 # [1.0 MW]
+    ITA,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 850.0 # [1.0 MW]
+    
+    AUT,SVN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    SVN,AUT.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    BEL,DEU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    DEU,BEL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    
+    BEL,FRA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2800.0 # [1.0 MW]
+    FRA,BEL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 4300.0 # [1.0 MW]
+    
+    BEL,GBR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    GBR,BEL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    
+    BEL,LUX.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 680.0 # [1.0 MW]
+    LUX,BEL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 180.0 # [1.0 MW]
+    
+    BEL,NLD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 3400.0 # [1.0 MW]
+    NLD,BEL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3400.0 # [1.0 MW]
+    
+    BGR,GRC.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1350.0 # [1.0 MW]
+    GRC,BGR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 800.0 # [1.0 MW]
+    
+    BGR,MKD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    MKD,BGR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    
+    BGR,ROU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1100.0 # [1.0 MW]
+    ROU,BGR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1500.0 # [1.0 MW]
+    
+    BGR,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 350.0 # [1.0 MW]
+    SRB,BGR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 200.0 # [1.0 MW]
+    
+    BIH,HRV.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1250.0 # [1.0 MW]
+    HRV,BIH.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1250.0 # [1.0 MW]
+    
+    BIH,MNE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 800.0 # [1.0 MW]
+    MNE,BIH.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 750.0 # [1.0 MW]
+    
+    BIH,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1100.0 # [1.0 MW]
+    SRB,BIH.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    CHE,DEU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 5600.0 # [1.0 MW]
+    DEU,CHE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3300.0 # [1.0 MW]
+    
+    CHE,FRA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1300.0 # [1.0 MW]
+    FRA,CHE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3700.0 # [1.0 MW]
+    
+    CHE,ITA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 6000.0 # [1.0 MW]
+    ITA,CHE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3700.0 # [1.0 MW]
+    
+    CYP,GRC.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    GRC,CYP.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    
+    CZE,DEU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2600.0 # [1.0 MW]
+    DEU,CZE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    
+    CZE,POL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    POL,CZE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    
+    CZE,SVK.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1800.0 # [1.0 MW]
+    SVK,CZE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1100.0 # [1.0 MW]
+    
+    DEU,DNK.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 4000.0 # [1.0 MW]
+    DNK,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3985.0 # [1.0 MW]
+    
+    DEU,FRA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 4500.0 # [1.0 MW]
+    FRA,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 4500.0 # [1.0 MW]
+    
+    DEU,GBR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    GBR,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    
+    DEU,LUX.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2300.0 # [1.0 MW]
+    LUX,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2300.0 # [1.0 MW]
+    
+    DEU,NLD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 5000.0 # [1.0 MW]
+    NLD,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 5000.0 # [1.0 MW]
+    
+    DEU,NOR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    NOR,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    
+    DEU,POL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    POL,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3000.0 # [1.0 MW]
+    
+    DEU,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1315.0 # [1.0 MW]
+    SWE,DEU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1300.0 # [1.0 MW]
+    
+    DNK,GBR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    GBR,DNK.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    
+    DNK,NLD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    NLD,DNK.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    
+    DNK,NOR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1700.0 # [1.0 MW]
+    NOR,DNK.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1640.0 # [1.0 MW]
+    
+    DNK,POL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    POL,DNK.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    
+    DNK,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2440.0 # [1.0 MW]
+    SWE,DNK.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1980.0 # [1.0 MW]
+    
+    ESP,FRA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 5000.0 # [1.0 MW]
+    FRA,ESP.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 5000.0 # [1.0 MW]
+    
+    ESP,PRT.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 4200.0 # [1.0 MW]
+    PRT,ESP.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3500.0 # [1.0 MW]
+    
+    EST,FIN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1016.0 # [1.0 MW]
+    FIN,EST.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1016.0 # [1.0 MW]
+    
+    EST,LVA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1379.0 # [1.0 MW]
+    LVA,EST.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1379.0 # [1.0 MW]
+    
+    FIN,NOR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    NOR,FIN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    
+    FIN,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 3200.0 # [1.0 MW]
+    SWE,FIN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3200.0 # [1.0 MW]
+    
+    FRA,GBR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 6900.0 # [1.0 MW]
+    GBR,FRA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 6900.0 # [1.0 MW]
+    
+    FRA,IRL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    IRL,FRA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    
+    FRA,ITA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 4500.0 # [1.0 MW]
+    ITA,FRA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2360.0 # [1.0 MW]
+    
+    FRA,LUX.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 380.0 # [1.0 MW]
+    LUX,FRA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 0.0 # [1.0 MW]
+    
+    GBR,IRL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1700.0 # [1.0 MW]
+    IRL,GBR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1750.0 # [1.0 MW]
+    
+    GBR,NLD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    NLD,GBR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    
+    GBR,NOR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2800.0 # [1.0 MW]
+    NOR,GBR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2800.0 # [1.0 MW]
+    
+    GRC,ITA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    ITA,GRC.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 500.0 # [1.0 MW]
+    
+    GRC,MKD.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    MKD,GRC.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    HRV,HUN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    HUN,HRV.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    
+    HRV,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    SRB,HRV.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    
+    HRV,SVN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    SVN,HRV.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    
+    HUN,ROU.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1300.0 # [1.0 MW]
+    ROU,HUN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1400.0 # [1.0 MW]
+    
+    HUN,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    SRB,HUN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    
+    HUN,SVK.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    SVK,HUN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 2000.0 # [1.0 MW]
+    
+    HUN,SVN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    SVN,HUN.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    ITA,MNE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    MNE,ITA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    
+    ITA,SVN.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1640.0 # [1.0 MW]
+    SVN,ITA.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1895.0 # [1.0 MW]
+    
+    LTU,LVA.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1200.0 # [1.0 MW]
+    LVA,LTU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1500.0 # [1.0 MW]
+    
+    LTU,POL.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    POL,LTU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1000.0 # [1.0 MW]
+    
+    LTU,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    SWE,LTU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    
+    MKD,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 750.0 # [1.0 MW]
+    SRB,MKD.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 750.0 # [1.0 MW]
+    
+    MNE,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    SRB,MNE.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    
+    NLD,NOR.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    NOR,NLD.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 700.0 # [1.0 MW]
+    
+    NOR,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 3695.0 # [1.0 MW]
+    SWE,NOR.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 3995.0 # [1.0 MW]
+    
+    POL,SVK.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 990.0 # [1.0 MW]
+    SVK,POL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 990.0 # [1.0 MW]
+    
+    POL,SWE.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    SWE,POL.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 600.0 # [1.0 MW]
+    
+    ROU,SRB.techs:
+        uni_directional_ac_transmission_A:
+            constraints:
+                energy_cap_equals: 1300.0 # [1.0 MW]
+    SRB,ROU.techs:
+        uni_directional_ac_transmission_B:
+            constraints:
+                energy_cap_equals: 1300.0 # [1.0 MW]
+    

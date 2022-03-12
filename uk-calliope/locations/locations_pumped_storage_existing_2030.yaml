@@ -1,0 +1,26 @@
+locations:
+    Z1_4:
+        techs:
+            pumped_storage_existing:
+                constraints:
+                    energy_cap_equals: 912000  # 300 + 612 MW and 6.3 + 30 GWh
+                    storage_cap_equals: 36300000  # Foyers, {mackay2008_pumped} + Coire Glas {http://sse.com/whatwedo/ourprojectsandassets/renewables/CoireGlas/}
+    Z3:
+        techs:
+            pumped_storage_existing:
+                constraints:
+                    energy_cap_equals: 440000  # http://enipedia.tudelft.nl/wiki/Cruachan_Powerplant
+                    storage_cap_equals: 10000000  # Cruachan, {mackay2008_pumped}
+    Z9:
+        techs:
+            pumped_storage_existing:
+                constraints:
+                    energy_cap_equals: 2004000
+                    storage_cap_equals: 10400000  # Dinorwig + Ffestiniog, {mackay2008_pumped}
+
+    # All other zones have no pumped storage
+    Z1_1,Z1_2,Z1_3,Z2,Z4,Z5,Z6,Z7,Z8,Z10,Z11,Z12,Z13,Z14,Z15,Z16,Z17:
+        techs:
+            pumped_storage_existing:
+                constraints:
+                    energy_cap_equals: 0.0

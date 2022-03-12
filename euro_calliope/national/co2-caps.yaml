@@ -1,0 +1,138 @@
+
+group_constraints:
+    
+    co2_cap_AUT:
+        locs: ["AUT"]
+        cost_max:
+            co2: 13.57850693 # [1.0 Mt]
+    
+    co2_cap_BEL:
+        locs: ["BEL"]
+        cost_max:
+            co2: 16.66464298 # [1.0 Mt]
+    
+    co2_cap_BGR:
+        locs: ["BGR"]
+        cost_max:
+            co2: 18.84109825 # [1.0 Mt]
+    
+    co2_cap_HRV:
+        locs: ["HRV"]
+        cost_max:
+            co2: 2.802077888 # [1.0 Mt]
+    
+    co2_cap_CYP:
+        locs: ["CYP"]
+        cost_max:
+            co2: 1.265888096 # [1.0 Mt]
+    
+    co2_cap_CZE:
+        locs: ["CZE"]
+        cost_max:
+            co2: 51.93432791 # [1.0 Mt]
+    
+    co2_cap_DNK:
+        locs: ["DNK"]
+        cost_max:
+            co2: 6.039382782 # [1.0 Mt]
+    
+    co2_cap_EST:
+        locs: ["EST"]
+        cost_max:
+            co2: 8.324641199 # [1.0 Mt]
+    
+    co2_cap_FIN:
+        locs: ["FIN"]
+        cost_max:
+            co2: 17.26193862 # [1.0 Mt]
+    
+    co2_cap_FRA:
+        locs: ["FRA"]
+        cost_max:
+            co2: 9.588149013 # [1.0 Mt]
+    
+    co2_cap_DEU:
+        locs: ["DEU"]
+        cost_max:
+            co2: 184.0 # [1.0 Mt]
+    
+    co2_cap_GRC:
+        locs: ["GRC"]
+        cost_max:
+            co2: 19.05429901 # [1.0 Mt]
+    
+    co2_cap_HUN:
+        locs: ["HUN"]
+        cost_max:
+            co2: 4.743418165 # [1.0 Mt]
+    
+    co2_cap_IRL:
+        locs: ["IRL"]
+        cost_max:
+            co2: 9.229915819 # [1.0 Mt]
+    
+    co2_cap_ITA:
+        locs: ["ITA"]
+        cost_max:
+            co2: 93.96020785 # [1.0 Mt]
+    
+    co2_cap_LVA:
+        locs: ["LVA"]
+        cost_max:
+            co2: 1.470655465 # [1.0 Mt]
+    
+    co2_cap_LTU:
+        locs: ["LTU"]
+        cost_max:
+            co2: 1.700576549 # [1.0 Mt]
+    
+    co2_cap_LUX:
+        locs: ["LUX"]
+        cost_max:
+            co2: 1.289924653 # [1.0 Mt]
+    
+    co2_cap_NLD:
+        locs: ["NLD"]
+        cost_max:
+            co2: 42.99913985 # [1.0 Mt]
+    
+    co2_cap_POL:
+        locs: ["POL"]
+        cost_max:
+            co2: 153.543422 # [1.0 Mt]
+    
+    co2_cap_PRT:
+        locs: ["PRT"]
+        cost_max:
+            co2: 3.047609809 # [1.0 Mt]
+    
+    co2_cap_ROU:
+        locs: ["ROU"]
+        cost_max:
+            co2: 13.99354201 # [1.0 Mt]
+    
+    co2_cap_SVK:
+        locs: ["SVK"]
+        cost_max:
+            co2: 4.23670174 # [1.0 Mt]
+    
+    co2_cap_SVN:
+        locs: ["SVN"]
+        cost_max:
+            co2: 5.757251595 # [1.0 Mt]
+    
+    co2_cap_ESP:
+        locs: ["ESP"]
+        cost_max:
+            co2: 36.98020337 # [1.0 Mt]
+    
+    co2_cap_SWE:
+        locs: ["SWE"]
+        cost_max:
+            co2: 6.090223719 # [1.0 Mt]
+    
+    co2_cap_GBR:
+        locs: ["GBR"]
+        cost_max:
+            co2: 45.3422211 # [1.0 Mt]
+    

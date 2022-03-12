@@ -1,0 +1,308 @@
+# replaces original techs.yaml. Removes all MILP constraints
+
+tech_groups:
+    supply:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+    supply_plus:
+        constraints.lifetime: 20
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+    conversion:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+    conversion_plus:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+    transmission:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+    storage:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.carbon:
+            interest_rate: 0.1  # dummy interest rate
+            energy_cap: 0.001  # dummy cost
+
+techs:
+
+# Demand ------
+    demand_electricity:
+        essentials:
+            color: "#542788"
+            parent: demand
+            name: Electrical demand
+            carrier_in: electricity
+        constraints:
+            resource: file=demand_electricity.csv
+
+    demand_cooling:
+        essentials:
+            color: "#4575b4"
+            parent: demand
+            name: Cooling demand
+            carrier_in: cooling
+        constraints:
+            resource: file=demand_cooling.csv
+
+# Building-scale ------
+    pv:
+        essentials:
+            color: "#fee08b"
+            parent: supply_plus
+            name: Solar PV
+            carrier_out: electricity
+        constraints:
+            resource: file=solar_resource.csv:pv
+            energy_cap_max: .inf
+            force_resource: true
+            resource_area_per_energy_cap: 7
+            resource_area_max: .inf  # locations will provide their own limit
+            export_carrier: electricity
+        costs:
+            monetary:
+                energy_cap: 55000  # Local engineering firm estimate
+                export: -3.40  # https://mnre.gov.in/file-manager/akshay-urja/may-june-2014/EN/18-22.pdf
+
+    AC:
+        essentials:
+            color: "#abd9e9"
+            parent: conversion
+            name: Air conditioning
+            carrier_out: cooling
+            carrier_in: electricity
+        constraints:
+            energy_cap_max: 5000
+            energy_eff: 3
+        costs:
+            monetary:
+                energy_cap: 24147  # Local engineering firm estimate
+
+    diesel_gen:
+        essentials:
+            color: "#1d1335"
+            parent: supply
+            name: Diesel Generator
+            carrier_out: electricity
+        constraints:
+            energy_cap_max: .inf
+            energy_eff: 0.45
+        costs:
+            monetary:
+                energy_cap: 9000  # Local engineering firm estimate
+                om_prod: 16  # Local engineering firm estimate
+            carbon.om_con: 0.28492  # https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/526958/ghg-conversion-factors-2016update_MASTER__links_removed__v2.xls
+
+    transformer:
+        essentials:
+            color: "#abd9e9"
+            name: step down transformer
+            parent: conversion
+            carrier_out: electricity
+            carrier_in: distrib_electricity
+        constraints:
+            energy_cap_max: .inf
+            energy_eff: 1 # no losses
+        costs.monetary.energy_cap: 0.001  # dummy cost
+
+    exchanger:
+        essentials:
+            color: "#abd9e9"
+            name: cold water exchanger
+            parent: conversion
+            carrier_out: cooling
+            carrier_in: distrib_cooling
+        constraints:
+            energy_cap_max: .inf
+            energy_eff: 1 # no losses
+        costs.monetary.energy_cap: 9000  # Local engineering firm estimate
+
+    battery:
+        essentials:
+            name: 'Battery storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            storage_cap_max: 100
+            energy_cap_max: .inf  # i.e. ignored
+            charge_rate: 0.7
+        costs.monetary.energy_cap: 17000  # Local engineering firm estimate
+
+# Energy centre ------
+    CCHP_supply:
+        essentials:
+            color: "#2e382f"
+            parent: supply
+            name: Combustion fuel
+            carrier_out: cchp_fuel
+        constraints:
+            energy_cap_max: .inf
+
+    CCHP_biomass:
+        essentials:
+            color: "#a6d96a"
+            parent: conversion_plus
+            name: Biomass Combined Cooling, Heat & Power
+            primary_carrier_out: distrib_electricity
+            carrier_out: distrib_electricity
+            carrier_out_2: distrib_cooling
+            carrier_in: cchp_fuel  # biomass
+        constraints:
+            export_carrier: distrib_electricity
+            energy_cap_max: 50000
+            energy_eff: 0.2  # http://www.basisbioenergy.eu/fileadmin/BASIS/D3.5_Report_on_conversion_efficiency_of_biomass.pdf
+            carrier_ratios.carrier_out_2.distrib_cooling: 2.1  # heat -> cooling = 0.7 & biomass HTP ~ 3 | http://www.basisbioenergy.eu/fileadmin/BASIS/D3.5_Report_on_conversion_efficiency_of_biomass.pdf
+        costs:
+            monetary:
+                export: -3.40  # Rs, to cancel out the purchase of electricity elsewhere
+                om_prod: 7  # https://www.energy.gov/sites/prod/files/2017/06/f35/CHP-Absorption%20Chiller-compliant.pdf + biomass_costs.pdf
+                energy_cap: 65840  # https://www.energy.gov/sites/prod/files/2017/06/f35/CHP-Absorption%20Chiller-compliant.pdf ($1000/TR for large exhaust driven HRAR -> 19,000INR @ 73INR/USD) & biomass_costs.pdf (46,840/kW for 10MW installation)
+                #purchase: 4e5 # 100m2 for fuel storage
+                om_con: 1.1  # 5,400Rs/ton, 4900kWh/ton https://www.indiamart.com/proddetail/biomass-briquettes-12798055962.html, http://www.biofuelsb2b.com/useful_info.php?page=Typic
+            carbon.om_con:   0.01307  # https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/526958/ghg-conversion-factors-2016update_MASTER__links_removed__v2.xls
+
+    CCHP_diesel:
+        essentials:
+            color: "#1d1335"
+            parent: conversion_plus
+            name: Diesel Combined Cooling, Heat & Power
+            primary_carrier_out: distrib_electricity
+            carrier_out: distrib_electricity
+            carrier_out_2: distrib_cooling
+            carrier_in: cchp_fuel  # biomass
+        constraints:
+            export_carrier: distrib_electricity
+            energy_cap_max: 50000
+            energy_eff: 0.45
+            carrier_ratios.carrier_out_2.distrib_cooling: 0.7  # heat -> cooling = 0.7 & diesel HTP ~ 1
+        costs:
+            monetary:
+                export: -3.40  # Rs, to cancel out the purchase of electricity elsewhere
+                energy_cap: 28000  # https://www.energy.gov/sites/prod/files/2017/06/f35/CHP-Absorption%20Chiller-compliant.pdf & Lokanath
+                #purchase: 4e4  # 10m2 for fuel storage
+                om_con: 0  # move consumption cost to production cost (as we have a better idea of this)
+                om_prod: 23  # https://www.energy.gov/sites/prod/files/2017/06/f35/CHP-Absorption%20Chiller-compliant.pdf + biomass_costs.pdf + 16Rs/kWh produced (Lokanath)
+            carbon.om_con: 0.28492  # https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/526958/ghg-conversion-factors-2016update_MASTER__links_removed__v2.xls
+
+    EC:
+        essentials:
+            color: "#74add1"
+            name: Electric Chiller
+            parent: conversion_plus
+            primary_carrier_in: electricity
+            carrier_out: distrib_cooling
+            carrier_in: [electricity, distrib_electricity]
+        constraints:
+            energy_eff: 3.91  # Local engineering firm estimate
+            energy_cap_max: .inf
+        costs:
+            monetary:
+                energy_cap: 29442  # Local engineering firm estimate
+
+    cold_store:
+        essentials:
+            color: "#80cdc1"
+            parent: storage
+            name: Cold water storage
+            carrier_out: distrib_cooling
+            carrier_in: distrib_cooling
+        constraints:
+            charge_rate: 0.5
+            storage_cap_max: 100000
+            energy_cap_max: .inf
+        costs:
+            monetary:
+                storage_cap: 3000  # SPONS, converting GBP to INR
+
+    battery_EC:
+        essentials:
+            name: 'Battery storage'
+            parent: storage
+            carrier: distrib_electricity
+        constraints:
+            storage_cap_max: 600
+            energy_cap_max: .inf  # i.e. ignored
+            charge_rate: 0.7
+        costs.monetary.energy_cap: 17000  # Local engineering firm estimate
+
+# Link techs ------
+    thermal_pipes:
+        essentials:
+            color: "#062d6d"
+            parent: transmission
+            name: thermal energy pipeline
+            carrier: distrib_cooling
+        constraints:
+            energy_cap_max: .inf
+            energy_eff: 1  # heat loss assumed negligible
+        costs:
+            monetary:
+                energy_cap_per_distance: 731  # Rs, http://ncrpb.nic.in/Technical_assistance_report_comp_B/Volume%20I%20Panipat%20Water%20Supply/WSA_ADB%20NCRPB_FR_Vol%20I-D%20(Panipat%20WS%20Detailed%20Esitmates).pdf
+
+    thermal_EC_pipes:
+        essentials:
+            color: "#062d6d"
+            parent: transmission
+            name: Energy centre connection
+            carrier: distrib_cooling
+        constraints:
+            energy_cap_max: 50000
+            energy_eff: 1  # heat loss assumed negligible
+        costs:
+            monetary:
+                energy_cap_per_distance: 731  # Rs, http://ncrpb.nic.in/Technical_assistance_report_comp_B/Volume%20I%20Panipat%20Water%20Supply/WSA_ADB%20NCRPB_FR_Vol%20I-D%20(Panipat%20WS%20Detailed%20Esitmates).pdf
+                #purchase: 5.1e6  # Local engineering firm estimate
+
+    electricity_lines:
+        essentials:
+            color: "#abdda4ff"
+            parent: transmission
+            name: Electricity lines
+            carrier: distrib_electricity
+        constraints:
+            energy_cap_max: .inf
+            energy_eff: 1  # electrical losses assumed negligible
+        costs:
+            monetary:
+                energy_cap: 1e-4  # dummy cost
+
+    electricity_EC_lines:
+        essentials:
+            color: "#abdda4ff"
+            parent: transmission
+            name: Electricity lines
+            carrier: distrib_electricity
+        constraints:
+            energy_cap_max: 50000
+            energy_eff: 1  # electrical losses assumed negligible
+        costs:
+            monetary:
+                energy_cap: 1e-4  # dummy cost
+                #purchase: 1 # triggering purchase constraints
+
+# System supply -----
+    supply_elec:
+        essentials:
+            color: "#8073ac"
+            parent: supply
+            name: Electricity supply
+            carrier: electricity
+        constraints:
+            energy_cap_max: .inf
+        costs:
+            monetary.om_prod: 8  # Rs, 'Low tension commercial' https://www.karnataka.gov.in/kerc/Court%20Orders/Tariff%202017/ENGLISH-Press%20Note.pdf
+            carbon.om_prod: 0.7  # 2016-17 suggest 0.82 for whole india grid http://www.cea.nic.in/reports/others/thermal/tpece/cdm_co2/user_guide_ver13.pdf  # 2010-11 suggests 0.79 for whole grid, i.e. not much change http://www.cea.nic.in/reports/others/thermal/tpece/cdm_co2/user_guide_ver7.pdf # study that picks out Karnataka seperately shows that it has a grid intensity of 0.7 in 2011, with the increase to 0.79 caused by other states having particularly bad grid intensity http://cbalance.in/wp-content/uploads/2013/01/cbalance_white-paper_Electricity-emission-factors_28Dec2012_revised_V21.pdf

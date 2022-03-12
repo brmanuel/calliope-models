@@ -1,0 +1,87 @@
+# taken from https://github.com/sjpfenninger/uk-calliope
+techs:
+    coal:
+        essentials:
+            name: Coal
+            carrier: electricity
+            parent: supply
+        constraints:
+            energy_eff: 0.44  # Coal ASC with FGD medium nth o.a.k., {parsons2011}
+            resource: inf
+            lifetime: 25
+        costs:
+            monetary:
+                energy_cap: 2160180.0 # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_prod: 1.315  # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_annual: 46030.0 # [1.0 2016 EUR/MW/yr], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_con:  10.92  # [1.0 2016 EUR/MWh] net, medium, Table 6.3, {mott2010} (with 1 GJ = 0.277777 MWh)
+            co2:
+                om_prod:  8.2e-07  # [1.0 Mt] CO2eq/MWh, {ipcc_ar5_wg3}
+    lignite:
+        essentials:
+            name: Lignite
+            carrier: electricity
+            parent: supply
+        constraints:
+            energy_eff: 0.44  # Coal ASC with FGD medium nth o.a.k., {parsons2011}
+            resource: inf
+            lifetime: 25
+        costs:
+            monetary:
+                energy_cap: 2160180.0  # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_prod: 1.315  # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_annual: 46030.0  # [1.0 2016 EUR/MW/yr], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_con:  10.92  # [1.0 2016 EUR/MWh] net, medium, Table 6.3, {mott2010} (with 1 GJ = 0.277777 MWh)
+            co2:
+                om_prod:  9.1e-07  # [1.0 Mt] CO2eq/MWh, {ipcc_ar5_wg3} # ASSUME max of IPCC range for coal
+    oils: # ASSUME copy of lignite
+        essentials:
+            name: Oil
+            carrier: electricity
+            parent: supply
+        constraints:
+            energy_eff: 0.44  # Coal ASC with FGD medium nth o.a.k., {parsons2011}
+            resource: inf
+            lifetime: 25
+        costs:
+            monetary:
+                energy_cap: 2160180.0  # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_prod: 1.315  # [1.0 2016 EUR/MWh], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_annual: 46030.0  # [1.0 2016 EUR/MW/yr], Coal ASC with FGD medium nth o.a.k., {parsons2011}
+                om_con:  10.92  # [1.0 2016 EUR/MWh] net, medium, Table 6.3, {mott2010} (with 1 GJ = 0.277777 MWh)
+            co2:
+                om_prod:  9.1e-07  # [1.0 Mt] CO2eq/MWh, {ipcc_ar5_wg3} # ASSUME max of IPCC range for coal
+    ccgt:
+        essentials:
+            name: CCGT
+            carrier: electricity
+            parent: supply
+        constraints:
+            energy_eff: 0.58  # CCGT medium nth of a kind, {parsons2011}
+            resource: inf
+            lifetime: 25
+        costs:
+            monetary:
+                energy_cap: 879620.0  # [1.0 2016 EUR/MW], CCGT medium nth of a kind, {parsons2011}
+                om_prod: 0.132  # [1.0 2016 EUR/MWh], CCGT medium nth of a kind, {parsons2011}
+                om_annual: 30480.0  # [1.0 2016 EUR/MW/yr], CCGT medium nth of a kind, {parsons2011}
+                om_con: 37.61  # [1.0 2016 EUR/MWh] net, medium, Table 6.3, {mott2010} (with 1 GJ = 0.277777 MWh)
+            co2:
+                om_prod:  4.9e-07  # [1.0 Mt] CO2eq/MWh, {ipcc_ar5_wg3}
+    nuclear:
+        essentials:
+            name: Nuclear
+            carrier: electricity
+            parent: supply
+        constraints:
+            # energy_ramping: 0.2  # From {mit2011} "Relatively new nuclear reactors ramp asymmetrically: plants can down-ramp 20% of their total output within an hour, but they require six to eight hours to ramp up to full load."
+            resource: inf
+            lifetime: 25
+        costs:
+            monetary:
+                energy_cap: 3983840.0  # [1.0 2016 EUR/MW], Nuclear PWR medium nth of a kind, {parsons2011}
+                om_prod: 0.658  # [1.0 2016 EUR/MWh], Nuclear PWR medium nth of a kind, {parsons2011}
+                om_annual: 78900.0  # [1.0 2016 EUR/MW/yr], Nuclear PWR medium nth of a kind, {parsons2011}
+                om_con: 6.4  # [1.0 2016 EUR/MWh], Table 2, {decc2013}
+            co2:
+                om_prod: 1.2e-08  # [1.0 Mt] CO2eq/MWh, {ipcc_ar5_wg3}

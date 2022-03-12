@@ -1,0 +1,46 @@
+links:
+    A,B.techs:
+        thermal_pipes:
+        electricity_lines:
+    A,C.techs:
+        thermal_pipes:
+        electricity_lines:
+    C,D.techs:
+        thermal_pipes:
+        electricity_lines:
+    C,E.techs:
+        thermal_pipes:
+        electricity_lines:
+    E,F.techs:
+        thermal_pipes:
+        electricity_lines:
+    N1,E.techs:
+        thermal_pipes:
+        electricity_lines:
+    N1,F.techs:
+        thermal_pipes:
+        electricity_lines:
+    F,G.techs:
+        thermal_pipes:
+        electricity_lines:
+    EC1,N1.techs:
+        thermal_EC_pipes.constraints.one_way: true
+        electricity_EC_lines.constraints.one_way: true
+    N1,J.techs:
+        thermal_pipes:
+        electricity_lines:
+    J,H.techs:
+        thermal_pipes:
+        electricity_lines:
+    J,K.techs:
+        thermal_pipes:
+        electricity_lines:
+    G,H.techs:
+        thermal_pipes:
+        electricity_lines:
+    H,I.techs:
+        thermal_pipes:
+        electricity_lines:
+    K,H.techs:
+        thermal_pipes:
+        electricity_lines:

@@ -1,0 +1,219 @@
+
+group_constraints:
+    
+    renewable_share_AUT:
+        locs: ["AUT"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.7541138003000001
+    
+    renewable_share_BEL:
+        locs: ["BEL"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.2853713155
+    
+    renewable_share_BGR:
+        locs: ["BGR"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.3521286871
+    
+    renewable_share_HRV:
+        locs: ["HRV"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.4793772454
+    
+    renewable_share_CYP:
+        locs: ["CYP"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.293818286
+    
+    renewable_share_CZE:
+        locs: ["CZE"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.1195503732
+    
+    renewable_share_DNK:
+        locs: ["DNK"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.7136676816
+    
+    renewable_share_EST:
+        locs: ["EST"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.1821336434
+    
+    renewable_share_FIN:
+        locs: ["FIN"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.4625527239
+    
+    renewable_share_FRA:
+        locs: ["FRA"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.38543197630000003
+    
+    renewable_share_DEU:
+        locs: ["DEU"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.65
+    
+    renewable_share_GRC:
+        locs: ["GRC"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.5501616268
+    
+    renewable_share_HUN:
+        locs: ["HUN"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.06626137924
+    
+    renewable_share_IRL:
+        locs: ["IRL"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.4336295888
+    
+    renewable_share_ITA:
+        locs: ["ITA"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.41322218149999995
+    
+    renewable_share_LVA:
+        locs: ["LVA"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.4859856944
+    
+    renewable_share_LTU:
+        locs: ["LTU"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.1775172432
+    
+    renewable_share_LUX:
+        locs: ["LUX"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.1124538375
+    
+    renewable_share_NLD:
+        locs: ["NLD"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.3746535451
+    
+    renewable_share_POL:
+        locs: ["POL"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.19779496349999998
+    
+    renewable_share_PRT:
+        locs: ["PRT"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.7817195451000001
+    
+    renewable_share_ROU:
+        locs: ["ROU"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.5277383727
+    
+    renewable_share_SVK:
+        locs: ["SVK"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.18539146280000002
+    
+    renewable_share_SVN:
+        locs: ["SVN"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.4034730886
+    
+    renewable_share_ESP:
+        locs: ["ESP"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.5582122583
+    
+    renewable_share_SWE:
+        locs: ["SWE"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.6891780588
+    
+    renewable_share_GBR:
+        locs: ["GBR"]
+        techs: ["wind_onshore_monopoly", "wind_onshore_competing", "wind_offshore",
+                "open_field_pv", "roof_mounted_pv", "hydro_run_of_river", "hydro_reservoir",
+                "biomass"]
+        demand_share_min:
+            electricity: 0.42531179469999997
+    

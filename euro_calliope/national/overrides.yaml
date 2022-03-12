@@ -1,0 +1,2142 @@
+
+overrides:
+
+    no_csv:
+        tech_groups.wind_onshore.constraints.resource: 0.1
+        techs.open_field_pv.constraints.resource: 0.137
+        techs.roof_mounted_pv.constraints.resource: 0.01
+        techs.wind_offshore.constraints.resource: 0.1
+        techs.hydro_run_of_river.constraints.resource: 75
+        techs.hydro_reservoir.constraints.resource: 75
+
+
+    diw_assumptions:
+        techs.battery.constraints.energy_eff: 0.9591663046625439  # 0.9592 * 0.9592 ~ 0.92 round trip efficiency {Schmidt et al. 2017}
+        techs.battery.constraints.lifetime: 12 # {own assumption}
+        techs.battery.costs.monetary.interest_rate: 0.04 # {own assumption}
+        techs.battery.costs.monetary.om_annual: 0  # {own_assumptions}
+        techs.battery.costs.monetary.om_prod: 0  # {own_assumptions}
+        techs.nuclear.costs.monetary.om_con: 1.69 # [1.0 €/MWh]
+        techs.lignite.costs.monetary.om_con: 3.96 # [1.0 €/MWh]
+        techs.coal.costs.monetary.om_con: 9.72 # [1.0 €/MWh]
+        techs.ccgt.costs.monetary.om_con: 31.68 # [1.0 €/MWh]
+        techs.nuclear.costs.monetary.om_prod: 1.018 # [1.0 €/MWh] 0.658 + (0.03 € / kg CO2eq) * (12 kg CO2eq/MWh)
+        techs.lignite.costs.monetary.om_prod: 28.615 # [1.0 €/MWh] 1.315 + (0.03 € / kg CO2eq) * (910 kg CO2eq/MWh)
+        techs.coal.costs.monetary.om_prod: 25.915 # [1.0 €/MWh] 1.315 + (0.03 € / kg CO2eq) * (820 kg CO2eq/MWh)
+        techs.ccgt.costs.monetary.om_prod: 14.832 # [1.0 €/MWh] 0.132 + (0.03 € / kg CO2eq) * (490 kg CO2eq/MWh)
+
+    diw_battery_baseline_cost:
+        techs.battery.costs.monetary.energy_cap: 135140.0 # [1.0 EUR per MW] {Schmidt et al. 2017 and own assumptions}
+        techs.battery.costs.monetary.storage_cap: 315320.0 # [1.0 EUR per MWh] Schmidt et al. 2017 and own assumptions capacity
+        
+    jrc_etri_2014_renewable_costs:
+        techs.wind_offshore.costs.monetary.energy_cap: 2580000.0 # [1.0 EUR2013/MW]
+        techs.wind_offshore.costs.monetary.om_annual: 77400.0 # [1.0 EUR2013/MW/yr]
+        tech_groups.wind_onshore.costs.monetary.energy_cap: 1300000.0 # [1.0 EUR2013/MW]
+        tech_groups.wind_onshore.costs.monetary.om_annual: 28600.0 # [1.0 EUR2013/MW/yr]
+        tech_groups.pv.costs.monetary.energy_cap: 640000.0 # [1.0 EUR2013/MW]
+        tech_groups.pv.costs.monetary.om_annual: 10880.0 # [1.0 EUR2013/MW/yr]
+        
+    equal_interest_rate: # harmonise interest rates
+        tech_groups.conversion.costs.monetary.interest_rate: 0.04
+        tech_groups.conversion_plus.costs.monetary.interest_rate: 0.04
+        tech_groups.storage.costs.monetary.interest_rate: 0.04
+        tech_groups.supply.costs.monetary.interest_rate: 0.04
+        tech_groups.supply_plus.costs.monetary.interest_rate: 0.04
+        tech_groups.transmission.costs.monetary.interest_rate: 0.04
+        
+    battery_c_rate:
+        techs.battery.constraints.energy_cap_per_storage_cap_min: 0.25 # max 4h full-power discharge
+        techs.battery.constraints.energy_cap_per_storage_cap_max: 4 # min 1/4h full-power discharge
+    diw_battery_low_cost:
+        techs.battery.costs.monetary.energy_cap: 67570.0 # [1.0 EUR per MW]
+        techs.battery.costs.monetary.storage_cap: 157660.0 # [1.0 EUR per MWh]
+        
+    diw_battery_lowest_cost:
+        techs.battery.costs.monetary.energy_cap: 33785.0 # [1.0 EUR per MW]
+        techs.battery.costs.monetary.storage_cap: 78830.0 # [1.0 EUR per MWh]
+
+
+    unambiguous_pv_wind:
+        techs.open_field_pv.costs.monetary.energy_cap: 6400000.0 # 10x cost of rooftop
+        techs.wind_onshore_monopoly.costs.monetary.energy_cap: 13000000.0 # 10x cost of wind_onshore_competing
+
+    germany_only:
+        # locations
+        locations.ALB.exists: False
+        locations.AUT.exists: False
+        locations.BEL.exists: False
+        locations.BGR.exists: False
+        locations.BIH.exists: False
+        locations.CHE.exists: False
+        locations.CYP.exists: False
+        locations.CZE.exists: False
+        locations.DNK.exists: False
+        locations.ESP.exists: False
+        locations.EST.exists: False
+        locations.FIN.exists: False
+        locations.FRA.exists: False
+        locations.GBR.exists: False
+        locations.GRC.exists: False
+        locations.HRV.exists: False
+        locations.HUN.exists: False
+        locations.IRL.exists: False
+        locations.ITA.exists: False
+        locations.LTU.exists: False
+        locations.LUX.exists: False
+        locations.LVA.exists: False
+        locations.MKD.exists: False
+        locations.MNE.exists: False
+        locations.NLD.exists: False
+        locations.NOR.exists: False
+        locations.POL.exists: False
+        locations.PRT.exists: False
+        locations.ROU.exists: False
+        locations.SRB.exists: False
+        locations.SVK.exists: False
+        locations.SVN.exists: False
+        locations.SWE.exists: False
+        # co2 caps
+        group_constraints.co2_cap_ALB.exists: False
+        group_constraints.co2_cap_AUT.exists: False
+        group_constraints.co2_cap_BEL.exists: False
+        group_constraints.co2_cap_BGR.exists: False
+        group_constraints.co2_cap_BIH.exists: False
+        group_constraints.co2_cap_CHE.exists: False
+        group_constraints.co2_cap_CYP.exists: False
+        group_constraints.co2_cap_CZE.exists: False
+        group_constraints.co2_cap_DNK.exists: False
+        group_constraints.co2_cap_ESP.exists: False
+        group_constraints.co2_cap_EST.exists: False
+        group_constraints.co2_cap_FIN.exists: False
+        group_constraints.co2_cap_FRA.exists: False
+        group_constraints.co2_cap_GBR.exists: False
+        group_constraints.co2_cap_GRC.exists: False
+        group_constraints.co2_cap_HRV.exists: False
+        group_constraints.co2_cap_HUN.exists: False
+        group_constraints.co2_cap_IRL.exists: False
+        group_constraints.co2_cap_ITA.exists: False
+        group_constraints.co2_cap_LTU.exists: False
+        group_constraints.co2_cap_LUX.exists: False
+        group_constraints.co2_cap_LVA.exists: False
+        group_constraints.co2_cap_MKD.exists: False
+        group_constraints.co2_cap_MNE.exists: False
+        group_constraints.co2_cap_NLD.exists: False
+        group_constraints.co2_cap_NOR.exists: False
+        group_constraints.co2_cap_POL.exists: False
+        group_constraints.co2_cap_PRT.exists: False
+        group_constraints.co2_cap_ROU.exists: False
+        group_constraints.co2_cap_SRB.exists: False
+        group_constraints.co2_cap_SVK.exists: False
+        group_constraints.co2_cap_SVN.exists: False
+        group_constraints.co2_cap_SWE.exists: False
+        # renewable shares caps
+        group_constraints.renewable_share_ALB.exists: False
+        group_constraints.renewable_share_AUT.exists: False
+        group_constraints.renewable_share_BEL.exists: False
+        group_constraints.renewable_share_BGR.exists: False
+        group_constraints.renewable_share_BIH.exists: False
+        group_constraints.renewable_share_CHE.exists: False
+        group_constraints.renewable_share_CYP.exists: False
+        group_constraints.renewable_share_CZE.exists: False
+        group_constraints.renewable_share_DNK.exists: False
+        group_constraints.renewable_share_ESP.exists: False
+        group_constraints.renewable_share_EST.exists: False
+        group_constraints.renewable_share_FIN.exists: False
+        group_constraints.renewable_share_FRA.exists: False
+        group_constraints.renewable_share_GBR.exists: False
+        group_constraints.renewable_share_GRC.exists: False
+        group_constraints.renewable_share_HRV.exists: False
+        group_constraints.renewable_share_HUN.exists: False
+        group_constraints.renewable_share_IRL.exists: False
+        group_constraints.renewable_share_ITA.exists: False
+        group_constraints.renewable_share_LTU.exists: False
+        group_constraints.renewable_share_LUX.exists: False
+        group_constraints.renewable_share_LVA.exists: False
+        group_constraints.renewable_share_MKD.exists: False
+        group_constraints.renewable_share_MNE.exists: False
+        group_constraints.renewable_share_NLD.exists: False
+        group_constraints.renewable_share_NOR.exists: False
+        group_constraints.renewable_share_POL.exists: False
+        group_constraints.renewable_share_PRT.exists: False
+        group_constraints.renewable_share_ROU.exists: False
+        group_constraints.renewable_share_SRB.exists: False
+        group_constraints.renewable_share_SVK.exists: False
+        group_constraints.renewable_share_SVN.exists: False
+        group_constraints.renewable_share_SWE.exists: False
+
+    central_eu:
+        # locations (keep DEU, CHE, ITA, FRA, AUT)
+        locations.ALB.exists: False
+        locations.BEL.exists: False
+        locations.BGR.exists: False
+        locations.BIH.exists: False
+        locations.CYP.exists: False
+        locations.CZE.exists: False
+        locations.DNK.exists: False
+        locations.ESP.exists: False
+        locations.EST.exists: False
+        locations.FIN.exists: False
+        locations.GBR.exists: False
+        locations.GRC.exists: False
+        locations.HRV.exists: False
+        locations.HUN.exists: False
+        locations.IRL.exists: False
+        locations.LTU.exists: False
+        locations.LUX.exists: False
+        locations.LVA.exists: False
+        locations.MKD.exists: False
+        locations.MNE.exists: False
+        locations.NLD.exists: False
+        locations.NOR.exists: False
+        locations.POL.exists: False
+        locations.PRT.exists: False
+        locations.ROU.exists: False
+        locations.SRB.exists: False
+        locations.SVK.exists: False
+        locations.SVN.exists: False
+        locations.SWE.exists: False
+        # co2 caps
+        group_constraints.co2_cap_ALB.exists: False
+        group_constraints.co2_cap_BEL.exists: False
+        group_constraints.co2_cap_BGR.exists: False
+        group_constraints.co2_cap_BIH.exists: False
+        group_constraints.co2_cap_CYP.exists: False
+        group_constraints.co2_cap_CZE.exists: False
+        group_constraints.co2_cap_DNK.exists: False
+        group_constraints.co2_cap_ESP.exists: False
+        group_constraints.co2_cap_EST.exists: False
+        group_constraints.co2_cap_FIN.exists: False
+        group_constraints.co2_cap_GBR.exists: False
+        group_constraints.co2_cap_GRC.exists: False
+        group_constraints.co2_cap_HRV.exists: False
+        group_constraints.co2_cap_HUN.exists: False
+        group_constraints.co2_cap_IRL.exists: False
+        group_constraints.co2_cap_LTU.exists: False
+        group_constraints.co2_cap_LUX.exists: False
+        group_constraints.co2_cap_LVA.exists: False
+        group_constraints.co2_cap_MKD.exists: False
+        group_constraints.co2_cap_MNE.exists: False
+        group_constraints.co2_cap_NLD.exists: False
+        group_constraints.co2_cap_NOR.exists: False
+        group_constraints.co2_cap_POL.exists: False
+        group_constraints.co2_cap_PRT.exists: False
+        group_constraints.co2_cap_ROU.exists: False
+        group_constraints.co2_cap_SRB.exists: False
+        group_constraints.co2_cap_SVK.exists: False
+        group_constraints.co2_cap_SVN.exists: False
+        group_constraints.co2_cap_SWE.exists: False
+        # renewable shares caps
+        group_constraints.renewable_share_ALB.exists: False
+        group_constraints.renewable_share_BEL.exists: False
+        group_constraints.renewable_share_BGR.exists: False
+        group_constraints.renewable_share_BIH.exists: False
+        group_constraints.renewable_share_CYP.exists: False
+        group_constraints.renewable_share_CZE.exists: False
+        group_constraints.renewable_share_DNK.exists: False
+        group_constraints.renewable_share_ESP.exists: False
+        group_constraints.renewable_share_EST.exists: False
+        group_constraints.renewable_share_FIN.exists: False
+        group_constraints.renewable_share_GBR.exists: False
+        group_constraints.renewable_share_GRC.exists: False
+        group_constraints.renewable_share_HRV.exists: False
+        group_constraints.renewable_share_HUN.exists: False
+        group_constraints.renewable_share_IRL.exists: False
+        group_constraints.renewable_share_LTU.exists: False
+        group_constraints.renewable_share_LUX.exists: False
+        group_constraints.renewable_share_LVA.exists: False
+        group_constraints.renewable_share_MKD.exists: False
+        group_constraints.renewable_share_MNE.exists: False
+        group_constraints.renewable_share_NLD.exists: False
+        group_constraints.renewable_share_NOR.exists: False
+        group_constraints.renewable_share_POL.exists: False
+        group_constraints.renewable_share_PRT.exists: False
+        group_constraints.renewable_share_ROU.exists: False
+        group_constraints.renewable_share_SRB.exists: False
+        group_constraints.renewable_share_SVK.exists: False
+        group_constraints.renewable_share_SVN.exists: False
+        group_constraints.renewable_share_SWE.exists: False
+
+    topology:
+        # locations (keep DEU, CHE, ITA, FRA, AUT, LUX, GRC, BGR, ROU, MKD, ALB, SRB, MNE, BIH, HRV, SVN, HUN, SVK, CZE, POL)
+        locations.ITA.exists: False
+        locations.CYP.exists: False
+        locations.DNK.exists: False
+        locations.ESP.exists: False
+        locations.EST.exists: False
+        locations.FIN.exists: False
+        locations.GBR.exists: False
+        locations.IRL.exists: False
+        locations.LTU.exists: False
+        locations.LVA.exists: False
+        locations.ROU.exists: False
+        locations.NOR.exists: False
+        locations.PRT.exists: False
+        locations.SWE.exists: False
+
+    topology_with_grp_constr:
+        # co2 caps
+        group_constraints.co2_cap_ITA.exists: False
+        group_constraints.co2_cap_CYP.exists: False
+        group_constraints.co2_cap_DNK.exists: False
+        group_constraints.co2_cap_ESP.exists: False
+        group_constraints.co2_cap_EST.exists: False
+        group_constraints.co2_cap_FIN.exists: False
+        group_constraints.co2_cap_GBR.exists: False
+        group_constraints.co2_cap_IRL.exists: False
+        group_constraints.co2_cap_LTU.exists: False
+        group_constraints.co2_cap_LVA.exists: False
+        group_constraints.co2_cap_ROU.exists: False
+        group_constraints.co2_cap_NOR.exists: False
+        group_constraints.co2_cap_PRT.exists: False
+        group_constraints.co2_cap_SWE.exists: False
+        # renewable shares caps
+        group_constraints.renewable_share_ITA.exists: False
+        group_constraints.renewable_share_CYP.exists: False
+        group_constraints.renewable_share_DNK.exists: False
+        group_constraints.renewable_share_ESP.exists: False
+        group_constraints.renewable_share_EST.exists: False
+        group_constraints.renewable_share_FIN.exists: False
+        group_constraints.renewable_share_GBR.exists: False
+        group_constraints.renewable_share_IRL.exists: False
+        group_constraints.renewable_share_LTU.exists: False
+        group_constraints.renewable_share_LVA.exists: False
+        group_constraints.renewable_share_ROU.exists: False
+        group_constraints.renewable_share_NOR.exists: False
+        group_constraints.renewable_share_PRT.exists: False
+        group_constraints.renewable_share_SWE.exists: False
+
+    no_co2_caps:
+        group_constraints.co2_cap_ALB.exists: False
+        group_constraints.co2_cap_AUT.exists: False
+        group_constraints.co2_cap_BEL.exists: False
+        group_constraints.co2_cap_BGR.exists: False
+        group_constraints.co2_cap_BIH.exists: False
+        group_constraints.co2_cap_CHE.exists: False
+        group_constraints.co2_cap_CYP.exists: False
+        group_constraints.co2_cap_CZE.exists: False
+        group_constraints.co2_cap_DEU.exists: False
+        group_constraints.co2_cap_DNK.exists: False
+        group_constraints.co2_cap_ESP.exists: False
+        group_constraints.co2_cap_EST.exists: False
+        group_constraints.co2_cap_FIN.exists: False
+        group_constraints.co2_cap_FRA.exists: False
+        group_constraints.co2_cap_GBR.exists: False
+        group_constraints.co2_cap_GRC.exists: False
+        group_constraints.co2_cap_HRV.exists: False
+        group_constraints.co2_cap_HUN.exists: False
+        group_constraints.co2_cap_IRL.exists: False
+        group_constraints.co2_cap_ITA.exists: False
+        group_constraints.co2_cap_LTU.exists: False
+        group_constraints.co2_cap_LUX.exists: False
+        group_constraints.co2_cap_LVA.exists: False
+        group_constraints.co2_cap_MKD.exists: False
+        group_constraints.co2_cap_MNE.exists: False
+        group_constraints.co2_cap_NLD.exists: False
+        group_constraints.co2_cap_NOR.exists: False
+        group_constraints.co2_cap_POL.exists: False
+        group_constraints.co2_cap_PRT.exists: False
+        group_constraints.co2_cap_ROU.exists: False
+        group_constraints.co2_cap_SRB.exists: False
+        group_constraints.co2_cap_SVK.exists: False
+        group_constraints.co2_cap_SVN.exists: False
+        group_constraints.co2_cap_SWE.exists: False
+
+    no_renewable_shares:
+        group_constraints.renewable_share_ALB.exists: False
+        group_constraints.renewable_share_AUT.exists: False
+        group_constraints.renewable_share_BEL.exists: False
+        group_constraints.renewable_share_BGR.exists: False
+        group_constraints.renewable_share_BIH.exists: False
+        group_constraints.renewable_share_CHE.exists: False
+        group_constraints.renewable_share_CYP.exists: False
+        group_constraints.renewable_share_CZE.exists: False
+        group_constraints.renewable_share_DEU.exists: False
+        group_constraints.renewable_share_DNK.exists: False
+        group_constraints.renewable_share_ESP.exists: False
+        group_constraints.renewable_share_EST.exists: False
+        group_constraints.renewable_share_FIN.exists: False
+        group_constraints.renewable_share_FRA.exists: False
+        group_constraints.renewable_share_GBR.exists: False
+        group_constraints.renewable_share_GRC.exists: False
+        group_constraints.renewable_share_HRV.exists: False
+        group_constraints.renewable_share_HUN.exists: False
+        group_constraints.renewable_share_IRL.exists: False
+        group_constraints.renewable_share_ITA.exists: False
+        group_constraints.renewable_share_LTU.exists: False
+        group_constraints.renewable_share_LUX.exists: False
+        group_constraints.renewable_share_LVA.exists: False
+        group_constraints.renewable_share_MKD.exists: False
+        group_constraints.renewable_share_MNE.exists: False
+        group_constraints.renewable_share_NLD.exists: False
+        group_constraints.renewable_share_NOR.exists: False
+        group_constraints.renewable_share_POL.exists: False
+        group_constraints.renewable_share_PRT.exists: False
+        group_constraints.renewable_share_ROU.exists: False
+        group_constraints.renewable_share_SRB.exists: False
+        group_constraints.renewable_share_SVK.exists: False
+        group_constraints.renewable_share_SVN.exists: False
+        group_constraints.renewable_share_SWE.exists: False
+
+    no_run_of_river:
+        locations.ALB.techs.hydro_run_of_river.exists: False
+        locations.AUT.techs.hydro_run_of_river.exists: False
+        locations.BEL.techs.hydro_run_of_river.exists: False
+        locations.BGR.techs.hydro_run_of_river.exists: False
+        locations.BIH.techs.hydro_run_of_river.exists: False
+        locations.CHE.techs.hydro_run_of_river.exists: False
+        locations.CYP.techs.hydro_run_of_river.exists: False
+        locations.CZE.techs.hydro_run_of_river.exists: False
+        locations.DEU.techs.hydro_run_of_river.exists: False
+        locations.DNK.techs.hydro_run_of_river.exists: False
+        locations.ESP.techs.hydro_run_of_river.exists: False
+        locations.EST.techs.hydro_run_of_river.exists: False
+        locations.FIN.techs.hydro_run_of_river.exists: False
+        locations.FRA.techs.hydro_run_of_river.exists: False
+        locations.GBR.techs.hydro_run_of_river.exists: False
+        locations.GRC.techs.hydro_run_of_river.exists: False
+        locations.HRV.techs.hydro_run_of_river.exists: False
+        locations.HUN.techs.hydro_run_of_river.exists: False
+        locations.IRL.techs.hydro_run_of_river.exists: False
+        locations.ITA.techs.hydro_run_of_river.exists: False
+        locations.LTU.techs.hydro_run_of_river.exists: False
+        locations.LUX.techs.hydro_run_of_river.exists: False
+        locations.LVA.techs.hydro_run_of_river.exists: False
+        locations.MKD.techs.hydro_run_of_river.exists: False
+        locations.MNE.techs.hydro_run_of_river.exists: False
+        locations.NLD.techs.hydro_run_of_river.exists: False
+        locations.NOR.techs.hydro_run_of_river.exists: False
+        locations.POL.techs.hydro_run_of_river.exists: False
+        locations.PRT.techs.hydro_run_of_river.exists: False
+        locations.ROU.techs.hydro_run_of_river.exists: False
+        locations.SRB.techs.hydro_run_of_river.exists: False
+        locations.SVK.techs.hydro_run_of_river.exists: False
+        locations.SVN.techs.hydro_run_of_river.exists: False
+        locations.SWE.techs.hydro_run_of_river.exists: False
+
+    no_hydrogen:
+        locations.ALB.techs.hydrogen.exists: False
+        locations.AUT.techs.hydrogen.exists: False
+        locations.BEL.techs.hydrogen.exists: False
+        locations.BGR.techs.hydrogen.exists: False
+        locations.BIH.techs.hydrogen.exists: False
+        locations.CHE.techs.hydrogen.exists: False
+        locations.CYP.techs.hydrogen.exists: False
+        locations.CZE.techs.hydrogen.exists: False
+        locations.DEU.techs.hydrogen.exists: False
+        locations.DNK.techs.hydrogen.exists: False
+        locations.ESP.techs.hydrogen.exists: False
+        locations.EST.techs.hydrogen.exists: False
+        locations.FIN.techs.hydrogen.exists: False
+        locations.FRA.techs.hydrogen.exists: False
+        locations.GBR.techs.hydrogen.exists: False
+        locations.GRC.techs.hydrogen.exists: False
+        locations.HRV.techs.hydrogen.exists: False
+        locations.HUN.techs.hydrogen.exists: False
+        locations.IRL.techs.hydrogen.exists: False
+        locations.ITA.techs.hydrogen.exists: False
+        locations.LTU.techs.hydrogen.exists: False
+        locations.LUX.techs.hydrogen.exists: False
+        locations.LVA.techs.hydrogen.exists: False
+        locations.MKD.techs.hydrogen.exists: False
+        locations.MNE.techs.hydrogen.exists: False
+        locations.NLD.techs.hydrogen.exists: False
+        locations.NOR.techs.hydrogen.exists: False
+        locations.POL.techs.hydrogen.exists: False
+        locations.PRT.techs.hydrogen.exists: False
+        locations.ROU.techs.hydrogen.exists: False
+        locations.SRB.techs.hydrogen.exists: False
+        locations.SVK.techs.hydrogen.exists: False
+        locations.SVN.techs.hydrogen.exists: False
+        locations.SWE.techs.hydrogen.exists: False
+
+    no_hydro_reservoir:
+        locations.ALB.techs.hydro_reservoir.exists: False
+        locations.AUT.techs.hydro_reservoir.exists: False
+        locations.BEL.techs.hydro_reservoir.exists: False
+        locations.BGR.techs.hydro_reservoir.exists: False
+        locations.BIH.techs.hydro_reservoir.exists: False
+        locations.CHE.techs.hydro_reservoir.exists: False
+        locations.CYP.techs.hydro_reservoir.exists: False
+        locations.CZE.techs.hydro_reservoir.exists: False
+        locations.DEU.techs.hydro_reservoir.exists: False
+        locations.DNK.techs.hydro_reservoir.exists: False
+        locations.ESP.techs.hydro_reservoir.exists: False
+        locations.EST.techs.hydro_reservoir.exists: False
+        locations.FIN.techs.hydro_reservoir.exists: False
+        locations.FRA.techs.hydro_reservoir.exists: False
+        locations.GBR.techs.hydro_reservoir.exists: False
+        locations.GRC.techs.hydro_reservoir.exists: False
+        locations.HRV.techs.hydro_reservoir.exists: False
+        locations.HUN.techs.hydro_reservoir.exists: False
+        locations.IRL.techs.hydro_reservoir.exists: False
+        locations.ITA.techs.hydro_reservoir.exists: False
+        locations.LTU.techs.hydro_reservoir.exists: False
+        locations.LUX.techs.hydro_reservoir.exists: False
+        locations.LVA.techs.hydro_reservoir.exists: False
+        locations.MKD.techs.hydro_reservoir.exists: False
+        locations.MNE.techs.hydro_reservoir.exists: False
+        locations.NLD.techs.hydro_reservoir.exists: False
+        locations.NOR.techs.hydro_reservoir.exists: False
+        locations.POL.techs.hydro_reservoir.exists: False
+        locations.PRT.techs.hydro_reservoir.exists: False
+        locations.ROU.techs.hydro_reservoir.exists: False
+        locations.SRB.techs.hydro_reservoir.exists: False
+        locations.SVK.techs.hydro_reservoir.exists: False
+        locations.SVN.techs.hydro_reservoir.exists: False
+        locations.SWE.techs.hydro_reservoir.exists: False
+
+    tight_co2_caps:        
+        group_constraints.co2_cap_AUT.cost_max.co2: 6.789253465 # [1.0 Mt]
+        group_constraints.co2_cap_BEL.cost_max.co2: 8.33232149 # [1.0 Mt]
+        group_constraints.co2_cap_BGR.cost_max.co2: 9.420549125 # [1.0 Mt]
+        group_constraints.co2_cap_HRV.cost_max.co2: 1.401038944 # [1.0 Mt]
+        group_constraints.co2_cap_CYP.cost_max.co2: 0.632944048 # [1.0 Mt]
+        group_constraints.co2_cap_CZE.cost_max.co2: 25.967163955 # [1.0 Mt]
+        group_constraints.co2_cap_DNK.cost_max.co2: 3.019691391 # [1.0 Mt]
+        group_constraints.co2_cap_EST.cost_max.co2: 4.1623205995 # [1.0 Mt]
+        group_constraints.co2_cap_FIN.cost_max.co2: 8.63096931 # [1.0 Mt]
+        group_constraints.co2_cap_FRA.cost_max.co2: 4.7940745065 # [1.0 Mt]
+        group_constraints.co2_cap_DEU.cost_max.co2: 92.0 # [1.0 Mt]
+        group_constraints.co2_cap_GRC.cost_max.co2: 9.527149505 # [1.0 Mt]
+        group_constraints.co2_cap_HUN.cost_max.co2: 2.3717090825 # [1.0 Mt]
+        group_constraints.co2_cap_IRL.cost_max.co2: 4.6149579095 # [1.0 Mt]
+        group_constraints.co2_cap_ITA.cost_max.co2: 46.980103925 # [1.0 Mt]
+        group_constraints.co2_cap_LVA.cost_max.co2: 0.7353277325 # [1.0 Mt]
+        group_constraints.co2_cap_LTU.cost_max.co2: 0.8502882745 # [1.0 Mt]
+        group_constraints.co2_cap_LUX.cost_max.co2: 0.6449623265 # [1.0 Mt]
+        group_constraints.co2_cap_NLD.cost_max.co2: 21.499569925 # [1.0 Mt]
+        group_constraints.co2_cap_POL.cost_max.co2: 76.771711 # [1.0 Mt]
+        group_constraints.co2_cap_PRT.cost_max.co2: 1.5238049045 # [1.0 Mt]
+        group_constraints.co2_cap_ROU.cost_max.co2: 6.996771005 # [1.0 Mt]
+        group_constraints.co2_cap_SVK.cost_max.co2: 2.11835087 # [1.0 Mt]
+        group_constraints.co2_cap_SVN.cost_max.co2: 2.8786257975 # [1.0 Mt]
+        group_constraints.co2_cap_ESP.cost_max.co2: 18.490101685 # [1.0 Mt]
+        group_constraints.co2_cap_SWE.cost_max.co2: 3.0451118595 # [1.0 Mt]
+        group_constraints.co2_cap_GBR.cost_max.co2: 22.67111055 # [1.0 Mt]
+        
+    ose_capacity:
+        locations:
+            
+            ALB:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 150.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 80.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 468.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 2402.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 700.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            AUT:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 5000.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 4500.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 4671.89977 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 4787.517999999999 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 530.8219178082192 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 6055.333 # [1.0 MW]
+                            storage_cap_equals: 247007.5916605052 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 174.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 5148.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            BEL:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 3298.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 2310.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 5050.5 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 117.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 158.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 1118.6643835616437 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1150.0 # [1.0 MW]
+                            storage_cap_equals: 5490.384615384615 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 7509.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            BGR:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 1250.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 2000.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 600.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 1867.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 299.6575342465753 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 933.0 # [1.0 MW]
+                            storage_cap_equals: 11165.903225806453 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 168.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 3895.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 2297.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 2200.0 # [1.0 MW]
+            
+            BIH:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 640.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 100.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 1144.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 680.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 440.0 # [1.0 MW]
+                            storage_cap_equals: 2975.2380952380954 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 2536.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            CHE:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 370.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 5600.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 4139.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 8987.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 1113.013698630137 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 4593.0 # [1.0 MW]
+                            storage_cap_equals: 946182.3015873017 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 985.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 1190.0 # [1.0 MW]
+            
+            CYP:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 275.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 688.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 34.24657534246575 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 1004.5 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 660.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            CZE:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 950.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 3540.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 365.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 50.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 999.1438356164383 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1000.0 # [1.0 MW]
+                            storage_cap_equals: 4995.633187772926 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 251.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 4760.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 2884.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 4055.0 # [1.0 MW]
+            
+            DEU:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 81500.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 17000.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 91300.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 5600.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 6250.0 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 9500.0 # [1.0 MW]
+                            storage_cap_equals: 66500.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 9800.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 9300.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 3200.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 39300.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            DNK:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 5596.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 2905.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 2939.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 6.6082 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 1614.2123287671234 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 410.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 817.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 529.1 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            ESP:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 31000.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 40000.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 3850.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 10920.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 2183.219178082192 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 8280.0 # [1.0 MW]
+                            storage_cap_equals: 98924.7311827957 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 4660.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 33060.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 7117.0 # [1.0 MW]
+            
+            EST:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 1500.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 100.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 10.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 108.4332191780822 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 656.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 150.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            FIN:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 2300.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 700.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 1200.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 3200.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 2470.0342465753424 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 714.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 1300.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 1924.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 4560.0 # [1.0 MW]
+            
+            FRA:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 36336.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 7000.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 31515.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 13797.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 8197.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 3114.72602739726 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 5500.0 # [1.0 MW]
+                            storage_cap_equals: 106216.12230715774 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 1479.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 11496.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 37640.0 # [1.0 MW]
+            
+            GBR:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 17665.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 22182.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 24894.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 142.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 1553.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 7053.595890410959 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 100.0 # [1.0 MW]
+                            storage_cap_equals: 1007.5471698113208 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 345.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 38039.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 5686.0 # [1.0 MW]
+            
+            GRC:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 5900.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 300.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 4000.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 275.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 2720.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 385.2739726027397 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1289.0 # [1.0 MW]
+                            storage_cap_equals: 8716.095238095239 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 2251.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 228.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 6260.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            HRV:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 1500.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 200.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 500.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 2000.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 342.4657534246575 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 300.0 # [1.0 MW]
+                            storage_cap_equals: 2853.6585365853657 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 700.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 1500.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            HUN:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 1000.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 2000.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 60.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 351.027397260274 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 108.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 410.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 3534.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 4248.0 # [1.0 MW]
+            
+            IRL:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 5500.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 700.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 500.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 216.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 299.6575342465753 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 442.0 # [1.0 MW]
+                            storage_cap_equals: 2724.657534246576 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 80.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 500.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 3941.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            ITA:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 15575.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 654.5 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 25190.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 5637.334087977148 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 10724.072718355468 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 4497.306421232875 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 5731.79696969697 # [1.0 MW]
+                            storage_cap_equals: 51218.55747659845 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 5186.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 354.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 38489.564 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            LTU:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 750.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 80.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 138.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 170.37671232876713 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1125.0 # [1.0 MW]
+                            storage_cap_equals: 13806.818181818182 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 691.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            LUX:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 200.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 200.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 34.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 284.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 43.921232876712324 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1026.0 # [1.0 MW]
+                            storage_cap_equals: 4807.5428571428565 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 90.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            LVA:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 300.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 150.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 10.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 1619.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 252.56849315068493 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 1181.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            MKD:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 100.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 32.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 151.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 647.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 22.26027397260274 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 120.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 915.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 290.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            MNE:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 250.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 30.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 132.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 1139.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 33.390410958904106 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 450.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            NLD:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 6722.98 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 11500.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 11439.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 38.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 434.0753424657534 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 4608.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 11131.8 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 486.0 # [1.0 MW]
+            
+            NOR:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 3330.3 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 400.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 34702.191999999995 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 65.32791095890411 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1114.708 # [1.0 MW]
+                            storage_cap_equals: 499106.75798206276 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 435.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            POL:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 9200.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 2250.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 2430.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 1033.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 1503.4246575342465 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1488.0 # [1.0 MW]
+                            storage_cap_equals: 7191.548269581057 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 13771.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 7405.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 13017.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 3000.0 # [1.0 MW]
+            
+            PRT:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 5554.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 60.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 1816.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 734.7 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 4346.300000000001 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 721.7465753424657 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 4119.9 # [1.0 MW]
+                            storage_cap_equals: 131327.85222830335 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 4779.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            ROU:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 4200.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 2000.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 3290.5620671690804 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 3309.9157 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 428.0821917808219 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 85.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 3440.5 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 3241.0959999999995 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 2630.0 # [1.0 MW]
+            
+            SRB:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 1068.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 200.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 2025.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 503.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 101.02739726027397 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1260.0 # [1.0 MW]
+                            storage_cap_equals: 8520.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 5306.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 580.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+            
+            SVK:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 264.5 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 716.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 974.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 806.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 432.5315924657534 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 1486.0 # [1.0 MW]
+                            storage_cap_equals: 6828.0759493670885 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 240.28 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 1140.016 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 2890.0 # [1.0 MW]
+            
+            SVN:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 80.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 0.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 320.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 1500.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 57.363013698630134 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 600.0 # [1.0 MW]
+                            storage_cap_equals: 1666.6666666666665 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 50.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 539.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 554.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 696.0 # [1.0 MW]
+            
+            SWE:
+                techs:
+                    wind_onshore_monopoly:
+                        constraints:
+                            energy_cap_min: 10780.0 # [1.0 MW]
+                    wind_offshore:
+                        constraints:
+                            energy_cap_min: 190.0 # [1.0 MW]
+                    roof_mounted_pv:
+                        constraints:
+                            energy_cap_min: 1740.0 # [1.0 MW]
+                    hydro_run_of_river:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                    hydro_reservoir:
+                        constraints:
+                            energy_cap_equals: 16184.0 # [1.0 MW]
+                    biomass:
+                        constraints:
+                            energy_cap_equals: 3880.9931506849316 # [1.0 MW]
+                    pumped_hydro:
+                        constraints:
+                            energy_cap_equals: 0.0 # [1.0 MW]
+                            storage_cap_equals: 0.0 # [1.0 MWh]
+                    coal:
+                        constraints:
+                            energy_cap_max: 80.0 # [1.0 MW]
+                    lignite:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    oils:
+                        constraints:
+                            energy_cap_max: 0.0 # [1.0 MW]
+                    ccgt:
+                        constraints:
+                            energy_cap_max: 390.0 # [1.0 MW]
+                    nuclear:
+                        constraints:
+                            energy_cap_max: 6852.0 # [1.0 MW]
+
+
+# fails: can't add cost to uni_directional links because it will try to access both:
+# L1::uni_directional_ac_transmission_A:L2::electricity and
+# L1::uni_directional_ac_transmission_B:L2::electricity 
+# in carrier_prod. But only one is there (c.f. implementation of uni_directional links preprocess/locations.py:245)
+    expensive_uni_directional:
+        techs.uni_directional_ac_transmission_A.costs.monetary.om_prod: 0.002
+        techs.uni_directional_ac_transmission_B.costs.monetary.om_prod: 0.002
+
+    very_cheap_links:
+        techs.hvac.costs.monetary.om_prod: 0
+        techs.hvac.costs.co2.om_prod: 0
+
+    hvac_om_prod_0:
+        techs.hvac.costs.monetary.om_prod: 1e-7
+        techs.hvac.costs.co2.om_prod: 0
+
+    hvac_om_prod_1:
+        techs.hvac.costs.monetary.om_prod: 1e-6
+
+    hvac_om_prod_2:
+        techs.hvac.costs.monetary.om_prod: 1e-5
+
+    hvac_om_prod_3:
+        techs.hvac.costs.monetary.om_prod: 1e-4
+
+    hvac_om_prod_4:
+        techs.hvac.costs.monetary.om_prod: 1e-3
+
+# MB: replace each pair of uni-directional links with UK bidirectional hvac links 
+# MB: -> capacities are equal in both directions!
+    cheap_links:
+        links:
+            ALB,GRC.techs.hvac.constraints.energy_cap_equals: 250.0 # [1.0 MW]
+            ALB,MKD.techs.hvac.constraints.energy_cap_equals: 500.0 # [1.0 MW]
+            ALB,MNE.techs.hvac.constraints.energy_cap_equals: 400.0 # [1.0 MW]
+            ALB,SRB.techs.hvac.constraints.energy_cap_equals: 500.0 # [1.0 MW]
+            AUT,CHE.techs.hvac.constraints.energy_cap_equals: 1700.0 # [1.0 MW]
+            AUT,CZE.techs.hvac.constraints.energy_cap_equals: 1000.0 # [1.0 MW]
+            AUT,DEU.techs.hvac.constraints.energy_cap_equals: 7500.0 # [1.0 MW]
+            AUT,HUN.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            AUT,ITA.techs.hvac.constraints.energy_cap_equals: 1050.0 # [1.0 MW]
+            AUT,SVN.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            BEL,DEU.techs.hvac.constraints.energy_cap_equals: 1000.0 # [1.0 MW]
+            BEL,FRA.techs.hvac.constraints.energy_cap_equals: 2800.0 # [1.0 MW]
+            BEL,GBR.techs.hvac.constraints.energy_cap_equals: 1000.0 # [1.0 MW]
+            BEL,LUX.techs.hvac.constraints.energy_cap_equals: 680.0 # [1.0 MW]
+            BEL,NLD.techs.hvac.constraints.energy_cap_equals: 3400.0 # [1.0 MW]
+            BGR,GRC.techs.hvac.constraints.energy_cap_equals: 1350.0 # [1.0 MW]
+            BGR,MKD.techs.hvac.constraints.energy_cap_equals: 500.0 # [1.0 MW]
+            BGR,ROU.techs.hvac.constraints.energy_cap_equals: 1100.0 # [1.0 MW]
+            BGR,SRB.techs.hvac.constraints.energy_cap_equals: 350.0 # [1.0 MW]
+            BIH,HRV.techs.hvac.constraints.energy_cap_equals: 1250.0 # [1.0 MW]
+            BIH,MNE.techs.hvac.constraints.energy_cap_equals: 800.0 # [1.0 MW]
+            BIH,SRB.techs.hvac.constraints.energy_cap_equals: 1100.0 # [1.0 MW]
+            CHE,DEU.techs.hvac.constraints.energy_cap_equals: 5600.0 # [1.0 MW]
+            CHE,FRA.techs.hvac.constraints.energy_cap_equals: 1300.0 # [1.0 MW]
+            CHE,ITA.techs.hvac.constraints.energy_cap_equals: 6000.0 # [1.0 MW]
+            CYP,GRC.techs.hvac.constraints.energy_cap_equals: 0.0 # [1.0 MW]
+            CZE,DEU.techs.hvac.constraints.energy_cap_equals: 2600.0 # [1.0 MW]
+            CZE,POL.techs.hvac.constraints.energy_cap_equals: 600.0 # [1.0 MW]
+            CZE,SVK.techs.hvac.constraints.energy_cap_equals: 1800.0 # [1.0 MW]
+            DEU,DNK.techs.hvac.constraints.energy_cap_equals: 4000.0 # [1.0 MW]
+            DEU,FRA.techs.hvac.constraints.energy_cap_equals: 4500.0 # [1.0 MW]
+            DEU,GBR.techs.hvac.constraints.energy_cap_equals: 1400.0 # [1.0 MW]
+            DEU,LUX.techs.hvac.constraints.energy_cap_equals: 2300.0 # [1.0 MW]
+            DEU,NLD.techs.hvac.constraints.energy_cap_equals: 5000.0 # [1.0 MW]
+            DEU,NOR.techs.hvac.constraints.energy_cap_equals: 1400.0 # [1.0 MW]
+            DEU,POL.techs.hvac.constraints.energy_cap_equals: 2000.0 # [1.0 MW]
+            DEU,SWE.techs.hvac.constraints.energy_cap_equals: 1315.0 # [1.0 MW]
+            DNK,GBR.techs.hvac.constraints.energy_cap_equals: 1400.0 # [1.0 MW]
+            DNK,NLD.techs.hvac.constraints.energy_cap_equals: 700.0 # [1.0 MW]
+            DNK,NOR.techs.hvac.constraints.energy_cap_equals: 1700.0 # [1.0 MW]
+            DNK,POL.techs.hvac.constraints.energy_cap_equals: 0.0 # [1.0 MW]
+            DNK,SWE.techs.hvac.constraints.energy_cap_equals: 2440.0 # [1.0 MW]
+            ESP,FRA.techs.hvac.constraints.energy_cap_equals: 5000.0 # [1.0 MW]
+            ESP,PRT.techs.hvac.constraints.energy_cap_equals: 4200.0 # [1.0 MW]
+            EST,FIN.techs.hvac.constraints.energy_cap_equals: 1016.0 # [1.0 MW]
+            EST,LVA.techs.hvac.constraints.energy_cap_equals: 1379.0 # [1.0 MW]
+            FIN,NOR.techs.hvac.constraints.energy_cap_equals: 0.0 # [1.0 MW]
+            FIN,SWE.techs.hvac.constraints.energy_cap_equals: 3200.0 # [1.0 MW]
+            FRA,GBR.techs.hvac.constraints.energy_cap_equals: 6900.0 # [1.0 MW]
+            FRA,IRL.techs.hvac.constraints.energy_cap_equals: 0.0 # [1.0 MW]
+            FRA,ITA.techs.hvac.constraints.energy_cap_equals: 4500.0 # [1.0 MW]
+            FRA,LUX.techs.hvac.constraints.energy_cap_equals: 380.0 # [1.0 MW]
+            GBR,IRL.techs.hvac.constraints.energy_cap_equals: 1700.0 # [1.0 MW]
+            GBR,NLD.techs.hvac.constraints.energy_cap_equals: 1000.0 # [1.0 MW]
+            GBR,NOR.techs.hvac.constraints.energy_cap_equals: 2800.0 # [1.0 MW]
+            GRC,ITA.techs.hvac.constraints.energy_cap_equals: 500.0 # [1.0 MW]
+            GRC,MKD.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            HRV,HUN.techs.hvac.constraints.energy_cap_equals: 2000.0 # [1.0 MW]
+            HRV,SRB.techs.hvac.constraints.energy_cap_equals: 600.0 # [1.0 MW]
+            HRV,SVN.techs.hvac.constraints.energy_cap_equals: 2000.0 # [1.0 MW]
+            HUN,ROU.techs.hvac.constraints.energy_cap_equals: 1300.0 # [1.0 MW]
+            HUN,SRB.techs.hvac.constraints.energy_cap_equals: 600.0 # [1.0 MW]
+            HUN,SVK.techs.hvac.constraints.energy_cap_equals: 2000.0 # [1.0 MW]
+            HUN,SVN.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            ITA,MNE.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            ITA,SVN.techs.hvac.constraints.energy_cap_equals: 1640.0 # [1.0 MW]
+            LTU,LVA.techs.hvac.constraints.energy_cap_equals: 1200.0 # [1.0 MW]
+            LTU,POL.techs.hvac.constraints.energy_cap_equals: 1000.0 # [1.0 MW]
+            LTU,SWE.techs.hvac.constraints.energy_cap_equals: 700.0 # [1.0 MW]
+            MKD,SRB.techs.hvac.constraints.energy_cap_equals: 750.0 # [1.0 MW]
+            MNE,SRB.techs.hvac.constraints.energy_cap_equals: 700.0 # [1.0 MW]
+            NLD,NOR.techs.hvac.constraints.energy_cap_equals: 700.0 # [1.0 MW]
+            NOR,SWE.techs.hvac.constraints.energy_cap_equals: 3695.0 # [1.0 MW]
+            POL,SVK.techs.hvac.constraints.energy_cap_equals: 990.0 # [1.0 MW]
+            POL,SWE.techs.hvac.constraints.energy_cap_equals: 600.0 # [1.0 MW]
+            ROU,SRB.techs.hvac.constraints.energy_cap_equals: 1300.0 # [1.0 MW]
+
+            ALB,GRC.techs.uni_directional_ac_transmission_A.exists: False
+            GRC,ALB.techs.uni_directional_ac_transmission_B.exists: False
+            ALB,MKD.techs.uni_directional_ac_transmission_A.exists: False
+            MKD,ALB.techs.uni_directional_ac_transmission_B.exists: False
+            ALB,MNE.techs.uni_directional_ac_transmission_A.exists: False
+            MNE,ALB.techs.uni_directional_ac_transmission_B.exists: False
+            ALB,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,ALB.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,CHE.techs.uni_directional_ac_transmission_A.exists: False
+            CHE,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,CZE.techs.uni_directional_ac_transmission_A.exists: False
+            CZE,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,DEU.techs.uni_directional_ac_transmission_A.exists: False
+            DEU,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,HUN.techs.uni_directional_ac_transmission_A.exists: False
+            HUN,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,ITA.techs.uni_directional_ac_transmission_A.exists: False
+            ITA,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            AUT,SVN.techs.uni_directional_ac_transmission_A.exists: False
+            SVN,AUT.techs.uni_directional_ac_transmission_B.exists: False
+            BEL,DEU.techs.uni_directional_ac_transmission_A.exists: False
+            DEU,BEL.techs.uni_directional_ac_transmission_B.exists: False
+            BEL,FRA.techs.uni_directional_ac_transmission_A.exists: False
+            FRA,BEL.techs.uni_directional_ac_transmission_B.exists: False
+            BEL,GBR.techs.uni_directional_ac_transmission_A.exists: False
+            GBR,BEL.techs.uni_directional_ac_transmission_B.exists: False
+            BEL,LUX.techs.uni_directional_ac_transmission_A.exists: False
+            LUX,BEL.techs.uni_directional_ac_transmission_B.exists: False
+            BEL,NLD.techs.uni_directional_ac_transmission_A.exists: False
+            NLD,BEL.techs.uni_directional_ac_transmission_B.exists: False
+            BGR,GRC.techs.uni_directional_ac_transmission_A.exists: False
+            GRC,BGR.techs.uni_directional_ac_transmission_B.exists: False
+            BGR,MKD.techs.uni_directional_ac_transmission_A.exists: False
+            MKD,BGR.techs.uni_directional_ac_transmission_B.exists: False
+            BGR,ROU.techs.uni_directional_ac_transmission_A.exists: False
+            ROU,BGR.techs.uni_directional_ac_transmission_B.exists: False
+            BGR,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,BGR.techs.uni_directional_ac_transmission_B.exists: False
+            BIH,HRV.techs.uni_directional_ac_transmission_A.exists: False
+            HRV,BIH.techs.uni_directional_ac_transmission_B.exists: False
+            BIH,MNE.techs.uni_directional_ac_transmission_A.exists: False
+            MNE,BIH.techs.uni_directional_ac_transmission_B.exists: False
+            BIH,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,BIH.techs.uni_directional_ac_transmission_B.exists: False
+            CHE,DEU.techs.uni_directional_ac_transmission_A.exists: False
+            DEU,CHE.techs.uni_directional_ac_transmission_B.exists: False
+            CHE,FRA.techs.uni_directional_ac_transmission_A.exists: False
+            FRA,CHE.techs.uni_directional_ac_transmission_B.exists: False
+            CHE,ITA.techs.uni_directional_ac_transmission_A.exists: False
+            ITA,CHE.techs.uni_directional_ac_transmission_B.exists: False
+            CYP,GRC.techs.uni_directional_ac_transmission_A.exists: False
+            GRC,CYP.techs.uni_directional_ac_transmission_B.exists: False
+            CZE,DEU.techs.uni_directional_ac_transmission_A.exists: False
+            DEU,CZE.techs.uni_directional_ac_transmission_B.exists: False
+            CZE,POL.techs.uni_directional_ac_transmission_A.exists: False
+            POL,CZE.techs.uni_directional_ac_transmission_B.exists: False
+            CZE,SVK.techs.uni_directional_ac_transmission_A.exists: False
+            SVK,CZE.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,DNK.techs.uni_directional_ac_transmission_A.exists: False
+            DNK,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,FRA.techs.uni_directional_ac_transmission_A.exists: False
+            FRA,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,GBR.techs.uni_directional_ac_transmission_A.exists: False
+            GBR,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,LUX.techs.uni_directional_ac_transmission_A.exists: False
+            LUX,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,NLD.techs.uni_directional_ac_transmission_A.exists: False
+            NLD,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,NOR.techs.uni_directional_ac_transmission_A.exists: False
+            NOR,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,POL.techs.uni_directional_ac_transmission_A.exists: False
+            POL,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DEU,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,DEU.techs.uni_directional_ac_transmission_B.exists: False
+            DNK,GBR.techs.uni_directional_ac_transmission_A.exists: False
+            GBR,DNK.techs.uni_directional_ac_transmission_B.exists: False
+            DNK,NLD.techs.uni_directional_ac_transmission_A.exists: False
+            NLD,DNK.techs.uni_directional_ac_transmission_B.exists: False
+            DNK,NOR.techs.uni_directional_ac_transmission_A.exists: False
+            NOR,DNK.techs.uni_directional_ac_transmission_B.exists: False
+            DNK,POL.techs.uni_directional_ac_transmission_A.exists: False
+            POL,DNK.techs.uni_directional_ac_transmission_B.exists: False
+            DNK,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,DNK.techs.uni_directional_ac_transmission_B.exists: False
+            ESP,FRA.techs.uni_directional_ac_transmission_A.exists: False
+            FRA,ESP.techs.uni_directional_ac_transmission_B.exists: False
+            ESP,PRT.techs.uni_directional_ac_transmission_A.exists: False
+            PRT,ESP.techs.uni_directional_ac_transmission_B.exists: False
+            EST,FIN.techs.uni_directional_ac_transmission_A.exists: False
+            FIN,EST.techs.uni_directional_ac_transmission_B.exists: False
+            EST,LVA.techs.uni_directional_ac_transmission_A.exists: False
+            LVA,EST.techs.uni_directional_ac_transmission_B.exists: False
+            FIN,NOR.techs.uni_directional_ac_transmission_A.exists: False
+            NOR,FIN.techs.uni_directional_ac_transmission_B.exists: False
+            FIN,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,FIN.techs.uni_directional_ac_transmission_B.exists: False
+            FRA,GBR.techs.uni_directional_ac_transmission_A.exists: False
+            GBR,FRA.techs.uni_directional_ac_transmission_B.exists: False
+            FRA,IRL.techs.uni_directional_ac_transmission_A.exists: False
+            IRL,FRA.techs.uni_directional_ac_transmission_B.exists: False
+            FRA,ITA.techs.uni_directional_ac_transmission_A.exists: False
+            ITA,FRA.techs.uni_directional_ac_transmission_B.exists: False
+            FRA,LUX.techs.uni_directional_ac_transmission_A.exists: False
+            LUX,FRA.techs.uni_directional_ac_transmission_B.exists: False
+            GBR,IRL.techs.uni_directional_ac_transmission_A.exists: False
+            IRL,GBR.techs.uni_directional_ac_transmission_B.exists: False
+            GBR,NLD.techs.uni_directional_ac_transmission_A.exists: False
+            NLD,GBR.techs.uni_directional_ac_transmission_B.exists: False
+            GBR,NOR.techs.uni_directional_ac_transmission_A.exists: False
+            NOR,GBR.techs.uni_directional_ac_transmission_B.exists: False
+            GRC,ITA.techs.uni_directional_ac_transmission_A.exists: False
+            ITA,GRC.techs.uni_directional_ac_transmission_B.exists: False
+            GRC,MKD.techs.uni_directional_ac_transmission_A.exists: False
+            MKD,GRC.techs.uni_directional_ac_transmission_B.exists: False
+            HRV,HUN.techs.uni_directional_ac_transmission_A.exists: False
+            HUN,HRV.techs.uni_directional_ac_transmission_B.exists: False
+            HRV,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,HRV.techs.uni_directional_ac_transmission_B.exists: False
+            HRV,SVN.techs.uni_directional_ac_transmission_A.exists: False
+            SVN,HRV.techs.uni_directional_ac_transmission_B.exists: False
+            HUN,ROU.techs.uni_directional_ac_transmission_A.exists: False
+            ROU,HUN.techs.uni_directional_ac_transmission_B.exists: False
+            HUN,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,HUN.techs.uni_directional_ac_transmission_B.exists: False
+            HUN,SVK.techs.uni_directional_ac_transmission_A.exists: False
+            SVK,HUN.techs.uni_directional_ac_transmission_B.exists: False
+            HUN,SVN.techs.uni_directional_ac_transmission_A.exists: False
+            SVN,HUN.techs.uni_directional_ac_transmission_B.exists: False
+            ITA,MNE.techs.uni_directional_ac_transmission_A.exists: False
+            MNE,ITA.techs.uni_directional_ac_transmission_B.exists: False
+            ITA,SVN.techs.uni_directional_ac_transmission_A.exists: False
+            SVN,ITA.techs.uni_directional_ac_transmission_B.exists: False
+            LTU,LVA.techs.uni_directional_ac_transmission_A.exists: False
+            LVA,LTU.techs.uni_directional_ac_transmission_B.exists: False
+            LTU,POL.techs.uni_directional_ac_transmission_A.exists: False
+            POL,LTU.techs.uni_directional_ac_transmission_B.exists: False
+            LTU,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,LTU.techs.uni_directional_ac_transmission_B.exists: False
+            MKD,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,MKD.techs.uni_directional_ac_transmission_B.exists: False
+            MNE,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,MNE.techs.uni_directional_ac_transmission_B.exists: False
+            NLD,NOR.techs.uni_directional_ac_transmission_A.exists: False
+            NOR,NLD.techs.uni_directional_ac_transmission_B.exists: False
+            NOR,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,NOR.techs.uni_directional_ac_transmission_B.exists: False
+            POL,SVK.techs.uni_directional_ac_transmission_A.exists: False
+            SVK,POL.techs.uni_directional_ac_transmission_B.exists: False
+            POL,SWE.techs.uni_directional_ac_transmission_A.exists: False
+            SWE,POL.techs.uni_directional_ac_transmission_B.exists: False
+            ROU,SRB.techs.uni_directional_ac_transmission_A.exists: False
+            SRB,ROU.techs.uni_directional_ac_transmission_B.exists: False

@@ -1,0 +1,18 @@
+import:
+    - 'model_config/techs.yaml'
+    - 'model_config/locations.yaml'
+    - 'model_config/links.yaml'
+    - 'overrides.yaml'
+    - 'subsettimes.yaml'
+    - '../../seeds.yaml'
+    - '../../solvers.yaml'
+
+model:
+    timeseries_data_path: 'timeseries_data'
+    name: pickering-choudhary-2019-SCS Bangalore cooling network
+run:
+    solver: cplex
+    mode: plan
+    ensure_feasibility: true # Switching on unmet demand
+    bigM: 1e10 # setting the scale of unmet demand, which cannot be too high, otherwise the optimisation will not converge
+    cyclic_storage: true

@@ -1,0 +1,106 @@
+
+overrides:
+    co2_cap_strict:
+        group_constraints:
+            
+            co2_cap_1:
+                locs: ["Z1_1"]
+                cost_max:
+                    co2: 4500000
+        
+            co2_cap_2:
+                locs: ["Z4"]
+                cost_max:
+                    co2: 26000000
+        
+            co2_cap_3:
+                locs: ["Z12"]
+                cost_max:
+                    co2: 2271100000
+        
+            co2_cap_4:
+                locs: ["Z17"]
+                cost_max:
+                    co2: 788800000
+        
+            co2_cap_5:
+                locs: ["Z15"]
+                cost_max:
+                    co2: 1759900000
+        
+            co2_cap_6:
+                locs: ["Z7"]
+                cost_max:
+                    co2: 107500000
+        
+            co2_cap_7:
+                locs: ["Z1_4"]
+                cost_max:
+                    co2: 79400000
+        
+            co2_cap_8:
+                locs: ["Z16"]
+                cost_max:
+                    co2: 2428900000
+        
+            co2_cap_9:
+                locs: ["Z10"]
+                cost_max:
+                    co2: 208600000
+        
+            co2_cap_10:
+                locs: ["Z9"]
+                cost_max:
+                    co2: 300400000
+        
+            co2_cap_11:
+                locs: ["Z2"]
+                cost_max:
+                    co2: 58100000
+        
+            co2_cap_12:
+                locs: ["Z8"]
+                cost_max:
+                    co2: 11977100000
+        
+            co2_cap_13:
+                locs: ["Z1_3"]
+                cost_max:
+                    co2: 41000000
+        
+            co2_cap_14:
+                locs: ["Z13"]
+                cost_max:
+                    co2: 5435100000
+        
+            co2_cap_15:
+                locs: ["Z5"]
+                cost_max:
+                    co2: 132800000
+        
+            co2_cap_16:
+                locs: ["Z6"]
+                cost_max:
+                    co2: 34600000
+        
+            co2_cap_17:
+                locs: ["Z14"]
+                cost_max:
+                    co2: 2010000000
+        
+            co2_cap_18:
+                locs: ["Z11"]
+                cost_max:
+                    co2: 7068100000
+        
+            co2_cap_19:
+                locs: ["Z1_2"]
+                cost_max:
+                    co2: 4000000
+        
+            co2_cap_20:
+                locs: ["Z3"]
+                cost_max:
+                    co2: 159500000
+
+

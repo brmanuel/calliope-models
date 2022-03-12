@@ -1,0 +1,87 @@
+overrides:
+
+# gurobi barrier+crossover
+    solver_0_0:
+        run.solver: gurobi
+        run.solver_io: python
+        run.solver_options.Threads: 4
+        run.solver_options.Method: 2 # barrier...
+        run.solver_options.Crossover: -1 # ... with crossover
+        run.solver_options.FeasibilityTol: 1e-5
+        run.solver_options.OptimalityTol: 1e-5
+
+# gurobi primal simplex
+    solver_0_1:
+        run.solver: gurobi
+        run.solver_io: python
+        run.solver_options.Threads: 4
+        run.solver_options.Method: 0 # primal simplex
+        run.solver_options.FeasibilityTol: 1e-5
+        run.solver_options.OptimalityTol: 1e-5
+
+# gurobi barrier
+    solver_0_2:
+        run.solver: gurobi
+        run.solver_io: python
+        run.solver_options.Threads: 4
+        run.solver_options.Method: 2 # barrier...
+        run.solver_options.Crossover: 0 # ... without crossover
+        run.solver_options.FeasibilityTol: 1e-5
+        run.solver_options.OptimalityTol: 1e-5
+
+# gurobi dual simplex
+    solver_0_3:
+        run.solver: gurobi
+        run.solver_io: python
+        run.solver_options.Threads: 4
+        run.solver_options.Method: 1 # dual simplex
+        run.solver_options.FeasibilityTol: 1e-5
+        run.solver_options.OptimalityTol: 1e-5
+
+# cbc barrier+crossover
+    solver_1_0:
+        run.solver: cbc
+        run.solver_options.threads: 4
+        run.solver_options.barrier: ""
+        run.solver_options.crossover: on
+        run.solver_options.primalT: 1e-5
+        run.solver_options.dualT: 1e-5
+
+# cbc primal simplex
+    solver_1_1:
+        run.solver: cbc
+        run.solver_options.threads: 4
+        run.solver_options.primalS: ""
+        run.solver_options.primalT: 1e-5
+        run.solver_options.dualT: 1e-5 
+
+# cbc barrier
+    solver_1_2:
+        run.solver: cbc
+        run.solver_options.threads: 4
+        run.solver_options.barrier: ""
+        run.solver_options.crossover: off
+        run.solver_options.primalT: 1e-5
+        run.solver_options.dualT: 1e-5
+
+# cbc dual simplex
+    solver_1_3:
+        run.solver: cbc
+        run.solver_options.threads: 4
+        run.solver_options.dualS: ""
+        run.solver_options.primalT: 1e-5
+        run.solver_options.dualT: 1e-5 
+
+
+    unscaled:
+        run.scale: 0
+    filescaled:
+        run.scale: 1
+    autoscaled:
+        run.scale: 2
+    gurobiscaled_2:
+        run.solver_options.ScaleFlag: 2
+    gurobiscaled_3:
+        run.solver_options.ScaleFlag: 3
+    presolve_2:
+        run.solver_options.Presolve: 2

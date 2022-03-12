@@ -1,0 +1,104 @@
+
+group_constraints:
+            
+    co2_cap_Z1_1:
+        locs: ["Z1_1"]
+        cost_max:
+            co2: 4511766.595841791
+
+    co2_cap_x:
+        locs: ["Z4"]
+        cost_max:
+            co2: 26032506.90125075
+
+    co2_cap_x:
+        locs: ["Z12"]
+        cost_max:
+            co2: 2271160929.028622
+
+    co2_cap_x:
+        locs: ["Z17"]
+        cost_max:
+            co2: 788861960.5695516
+
+    co2_cap_x:
+        locs: ["Z15"]
+        cost_max:
+            co2: 1759980243.3359392
+
+    co2_cap_x:
+        locs: ["Z7"]
+        cost_max:
+            co2: 107507496.13466255
+
+    co2_cap_x:
+        locs: ["Z1_4"]
+        cost_max:
+            co2: 79460349.84155592
+
+    co2_cap_x:
+        locs: ["Z16"]
+        cost_max:
+            co2: 2428950845.3297634
+
+    co2_cap_x:
+        locs: ["Z10"]
+        cost_max:
+            co2: 208699691.48235488
+
+    co2_cap_x:
+        locs: ["Z9"]
+        cost_max:
+            co2: 300453505.23728484
+
+    co2_cap_x:
+        locs: ["Z2"]
+        cost_max:
+            co2: 58103211.6649342
+
+    co2_cap_x:
+        locs: ["Z8"]
+        cost_max:
+            co2: 11977117756.872692
+
+    co2_cap_x:
+        locs: ["Z1_3"]
+        cost_max:
+            co2: 41040115.85199035
+
+    co2_cap_x:
+        locs: ["Z13"]
+        cost_max:
+            co2: 5435151701.0986185
+
+    co2_cap_x:
+        locs: ["Z5"]
+        cost_max:
+            co2: 132866256.15642992
+
+    co2_cap_x:
+        locs: ["Z6"]
+        cost_max:
+            co2: 34655533.72886941
+
+    co2_cap_x:
+        locs: ["Z14"]
+        cost_max:
+            co2: 2010000496.308064
+
+    co2_cap_x:
+        locs: ["Z11"]
+        cost_max:
+            co2: 7068199202.701104
+
+    co2_cap_x:
+        locs: ["Z1_2"]
+        cost_max:
+            co2: 4049322.9912960636
+
+    co2_cap_x:
+        locs: ["Z3"]
+        cost_max:
+            co2: 159562858.6379747
+
+

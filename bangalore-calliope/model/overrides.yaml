@@ -1,0 +1,66 @@
+overrides:
+
+    milp:
+        # add purchase constraints on techs
+
+        techs.CCHP_biomass.costs.monetary.purchase: 4e5 # 100m2 for fuel storage
+        techs.CCHP_diesel.costs.monetary.purchase: 4e4  # 10m2 for fuel storage
+        techs.thermal_EC_pipes.costs.monetary.purchase: 5.1e6  # Local engineering firm estimate
+        techs.electricity_EC_lines.costs.monetary.purchase: 1 # triggering purchase constraints
+
+    month_clustering:
+        # Add clustering
+        model.time:
+                function: apply_clustering
+                function_options:
+                    clustering_func: file=clusters.csv:cluster_num
+                    how: mean
+    
+    kmean_clustering:
+        # Add clustering
+        model.random_seed: 23
+        model.time:
+            masks:
+                - {function: extreme_diff, options: {tech0: pv, tech1: demand_electricity, how: max}}
+                - {function: extreme, options: {tech: demand_cooling, how: max}}
+                - {function: extreme, options: {tech:  demand_electricity, how: max}}
+            function: apply_clustering
+            function_options: {clustering_func: kmeans, how: mean, k: 9}
+    
+    carbon:
+        run.objective_options.cost_class: carbon
+    
+    cost_of_carbon_low:
+        run.objective: minmax_map_costs
+        run.objective_options.cost_class_1: monetary
+        run.objective_options.cost_class_2: carbon
+        run.objective_options.map_2_to_1: 0.365
+    
+    cost_of_carbon_high:
+        run.objective: minmax_map_costs
+        run.objective_options.cost_class_1: monetary
+        run.objective_options.cost_class_2: carbon
+        run.objective_options.map_2_to_1: 9.49
+
+
+    cost_of_carbon_low_myfix:
+        run.objective_options.cost_class: {'monetary': 1, 'carbon': 0.365}
+    
+    cost_of_carbon_high_myfix:
+        run.objective_options.cost_class: {'monetary': 1, 'carbon': 9.49}
+
+    high_transmission_cost_1:
+        techs.electricity_lines.costs.monetary.energy_cap: 1e-3
+        techs.electricity_EC_lines.costs.monetary.energy_cap: 1e-3
+
+    high_transmission_cost_2:
+        techs.electricity_lines.costs.monetary.energy_cap: 1e-2
+        techs.electricity_EC_lines.costs.monetary.energy_cap: 1e-2
+
+    high_transmission_cost_3:
+        techs.electricity_lines.costs.monetary.energy_cap: 1e-1
+        techs.electricity_EC_lines.costs.monetary.energy_cap: 1e-1
+
+    bounded_transmission:
+        techs.electricity_lines.constraints.energy_cap_max: 500
+

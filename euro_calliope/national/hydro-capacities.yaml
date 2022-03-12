@@ -1,0 +1,513 @@
+
+locations:
+    
+    AUT:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 4509.601531122705 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 5121.404076433121 # [1.0 MW]
+                    storage_cap_equals: 3101951.835207593 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 3840.3 # [1.0 MW]
+                    storage_cap_equals: 574335.4551608794 # [1.0 MWh]
+    
+    BEL:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 59.01533974257918 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 12.73566878980889 # [1.0 MW]
+                    storage_cap_equals: 11335.472975432187 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1307.5 # [1.0 MW]
+                    storage_cap_equals: 5616.408934707903 # [1.0 MWh]
+    
+    BGR:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 22.4 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1484.4992356687897 # [1.0 MW]
+                    storage_cap_equals: 1321289.1482729756 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1399.0 # [1.0 MW]
+                    storage_cap_equals: 10757.865105426894 # [1.0 MWh]
+    
+    HRV:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 278.66773029167683 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1322.404458598726 # [1.0 MW]
+                    storage_cap_equals: 1177015.5341219292 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 518.7 # [1.0 MW]
+                    storage_cap_equals: 27814.347826086956 # [1.0 MWh]
+    
+    CYP:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    CZE:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 40.226382271496 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 711.4839022845104 # [1.0 MW]
+                    storage_cap_equals: 633261.3292562017 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1172.509551667839 # [1.0 MW]
+                    storage_cap_equals: 9016.225583750662 # [1.0 MWh]
+    
+    DNK:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    EST:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    FIN:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 1267.6499999999999 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1345.0 # [1.0 MW]
+                    storage_cap_equals: 1197126.857142857 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    FRA:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 5929.142562490508 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 9292.473949044586 # [1.0 MW]
+                    storage_cap_equals: 10217905.39266763 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 5049.0 # [1.0 MW]
+                    storage_cap_equals: 89134.09430854634 # [1.0 MWh]
+    
+    DEU:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 3737.4115043751476 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 202.8 # [1.0 MW]
+                    storage_cap_equals: 169695.0520291043 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 7158.620000000001 # [1.0 MW]
+                    storage_cap_equals: 43425.157317073164 # [1.0 MWh]
+    
+    GRC:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 110.315 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 2586.2 # [1.0 MW]
+                    storage_cap_equals: 1912857.142857143 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 699.0 # [1.0 MW]
+                    storage_cap_equals: 5375.087711717941 # [1.0 MWh]
+    
+    HUN:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 19.7 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 28.0 # [1.0 MW]
+                    storage_cap_equals: 24921.6 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    IRL:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 216.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1.0 # [1.0 MW]
+                    storage_cap_equals: 890.0571428571428 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 342.0 # [1.0 MW]
+                    storage_cap_equals: 2629.8712409263744 # [1.0 MWh]
+    
+    ITA:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 6949.100000000001 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 4652.47 # [1.0 MW]
+                    storage_cap_equals: 24586.223577235774 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 7295.4 # [1.0 MW]
+                    storage_cap_equals: 410779.55 # [1.0 MWh]
+    
+    LVA:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 642.1 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 869.0 # [1.0 MW]
+                    storage_cap_equals: 46330.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    LTU:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 101.0 # [1.0 MW]
+                    storage_cap_equals: 89895.77142857143 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 900.0 # [1.0 MW]
+                    storage_cap_equals: 6920.713791911511 # [1.0 MWh]
+    
+    LUX:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1291.0 # [1.0 MW]
+                    storage_cap_equals: 4478.0 # [1.0 MWh]
+    
+    NLD:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    POL:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 14.400368779543971 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 320.4554140127386 # [1.0 MW]
+                    storage_cap_equals: 285223.630209281 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1780.8 # [1.0 MW]
+                    storage_cap_equals: 7960.0 # [1.0 MWh]
+    
+    PRT:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 1615.5 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1965.4 # [1.0 MW]
+                    storage_cap_equals: 1956029.7893813075 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 2931.5 # [1.0 MW]
+                    storage_cap_equals: 193667.05836575874 # [1.0 MWh]
+    
+    ROU:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 870.4499999999999 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 5273.480127388534 # [1.0 MW]
+                    storage_cap_equals: 4693698.655097363 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    SVK:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 641.3299999999998 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 792.0 # [1.0 MW]
+                    storage_cap_equals: 704925.2571428572 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1021.28 # [1.0 MW]
+                    storage_cap_equals: 7853.318423781542 # [1.0 MWh]
+    
+    SVN:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 829.685 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 222.79000000000002 # [1.0 MW]
+                    storage_cap_equals: 198295.83085714286 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 185.0 # [1.0 MW]
+                    storage_cap_equals: 1422.5911683373663 # [1.0 MWh]
+    
+    ESP:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 8723.539999999999 # [1.0 MW]
+                    storage_cap_equals: 8383342.956559893 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 8007.172000000001 # [1.0 MW]
+                    storage_cap_equals: 4330539.930428923 # [1.0 MWh]
+    
+    SWE:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 1893.8601244908198 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 11454.063516863034 # [1.0 MW]
+                    storage_cap_equals: 10201184.430780493 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 426.0 # [1.0 MW]
+                    storage_cap_equals: 31886.22754491018 # [1.0 MWh]
+    
+    GBR:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 685.2 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 459.0 # [1.0 MW]
+                    storage_cap_equals: 408536.22857142857 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 2833.0 # [1.0 MW]
+                    storage_cap_equals: 26700.0 # [1.0 MWh]
+    
+    ALB:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 385.10199999999986 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1618.5 # [1.0 MW]
+                    storage_cap_equals: 1401830.2375 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    BIH:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 96.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1569.5 # [1.0 MW]
+                    storage_cap_equals: 2953.7795031055903 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 430.0 # [1.0 MW]
+                    storage_cap_equals: 3.4 # [1.0 MWh]
+    
+    MKD:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 41.6 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 449.0 # [1.0 MW]
+                    storage_cap_equals: 399635.65714285715 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    MNE:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 312.36 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 362.961 # [1.0 MW]
+                    storage_cap_equals: 354748.103343465 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+                    storage_cap_equals: 0.0 # [1.0 MWh]
+    
+    NOR:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 0.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 31694.42000000006 # [1.0 MW]
+                    storage_cap_equals: 44671639.099999964 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 1344.3 # [1.0 MW]
+                    storage_cap_equals: 4952921.7 # [1.0 MWh]
+    
+    SRB:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 215.0 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 1875.3 # [1.0 MW]
+                    storage_cap_equals: 784160.7808171745 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 614.0 # [1.0 MW]
+                    storage_cap_equals: 4721.464742481853 # [1.0 MWh]
+    
+    CHE:
+        techs:
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_equals: 4673.239800000004 # [1.0 MW]
+            hydro_reservoir:
+                constraints:
+                    energy_cap_equals: 8697.470000000001 # [1.0 MW]
+                    storage_cap_equals: 2253773.135760403 # [1.0 MWh]
+
+            pumped_hydro:
+                constraints:
+                    energy_cap_equals: 3921.8899999999994 # [1.0 MW]
+                    storage_cap_equals: 3348.1856747891284 # [1.0 MWh]
+    
